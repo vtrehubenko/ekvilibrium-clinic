@@ -4,22 +4,22 @@ const CLINICS = {
   odesa: {
     key: "odesa",
     label: "Одеса",
-    heroCity: "Одесі",
     address: "Люстдорфська дорога 55М, Одеса",
     hours: "Пн–Сб 10:00–19:00",
     phone: "+380991234567",
     telegram: "USERNAME1",
     viber: "+380991234567",
+    mapAddress: "Люстдорфська дорога 55М, Одеса",
   },
   clinic2: {
     key: "clinic2",
     label: "Клініка №2",
-    heroCity: "місті",
-    address: "Адреса другої клініки",
+    address: "Базарна 26, Одеса",
     hours: "Пн–Сб 10:00–19:00",
     phone: "+380991112233",
     telegram: "USERNAME2",
     viber: "+380991112233",
+    mapAddress: "Базарна 26, Одеса",
   },
 };
 
@@ -37,6 +37,7 @@ export function initClinicDropdown() {
   const phoneBtn = document.querySelector("[data-phone]");
   const tgBtn = document.querySelector("[data-tg]");
   const viberBtn = document.querySelector("[data-viber]");
+  const mapIframe = document.querySelector("[data-map-iframe]");
 
   // (optional) hero title city placeholder
   const heroCityEl = document.querySelector("[data-hero-city]");
@@ -92,6 +93,10 @@ export function initClinicDropdown() {
     if (viberBtn) {
       const enc = encodeURIComponent(clinic.viber);
       viberBtn.href = `viber://chat?number=${enc}`;
+    }
+    if (mapIframe && clinic.mapAddress) {
+      const q = encodeURIComponent(clinic.mapAddress);
+      mapIframe.src = `https://www.google.com/maps?q=${q}&output=embed`;
     }
 
     // optional: update hero city word
