@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EKvilibrium Clinic — стоматологія в Одесі</title>
+  </head>
+  <body>
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <div class="brand">
+          <img class="brand__logo" src="/img/logo.svg" alt="EK" />
+
+          <div class="brand__info">
+            <span class="brand__name">EKvilibrium Clinic</span>
+
+            <div class="clinic" data-clinic>
+              <button
+                class="clinic__btn"
+                type="button"
+                data-clinic-btn
+                aria-expanded="false"
+              >
+                <span class="clinic__current" data-clinic-current>Одеса</span>
+                <span class="clinic__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div
+                class="clinic__menu"
+                data-clinic-menu
+                role="menu"
+                aria-label="Вибір клініки"
+              >
+                <button
+                  class="clinic__item"
+                  type="button"
+                  role="menuitem"
+                  data-clinic-item="odesa"
+                >
+                  Одеса — Люстдорфська дорога 55М
+                </button>
+                <button
+                  class="clinic__item"
+                  type="button"
+                  role="menuitem"
+                  data-clinic-item="clinic2"
+                >
+                  Клініка №2 — (адреса)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav" data-nav>
+          <a href="#services">Послуги</a>
+          <a href="#prices">Ціни</a>
+          <a href="#doctors">Наші лікарі</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#contacts">Контакти</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="btn btn--ghost" href="tel:+380XXXXXXXXX">Подзвонити</a>
+          <a class="btn" href="#contacts">Записатися</a>
+          <button class="burger" data-burger aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section hero" data-reveal>
+        <div class="container hero__grid">
+          <div class="hero__text">
+            <h1>Стоматологія та ортодонтія в Одесі</h1>
+            <p>
+              Терапія • Ортодонтія • Ортопедія • Хірургія. Дбайливий підхід і
+              сучасне обладнання.
+            </p>
+
+            <div class="hero__cta">
+              <a
+                class="btn"
+                href="https://t.me/USERNAME"
+                target="_blank"
+                rel="noreferrer"
+                >Telegram</a
+              >
+              <a
+                class="btn btn--ghost"
+                href="viber://chat?number=%2B380XXXXXXXXX"
+                >Viber</a
+              >
+            </div>
+
+            <div class="hero__badges">
+              <div class="badge">Стерильність</div>
+              <div class="badge">Сучасна діагностика</div>
+              <div class="badge">План лікування</div>
+            </div>
+          </div>
+
+          <div class="hero__media">
+            <img src="/img/hero.jpg" alt="Клініка" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services" data-reveal>
+        <div class="container">
+          <h2>Послуги</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Ортодонтія</h3>
+              <p>Брекети, елайнери, корекція прикусу.</p>
+            </article>
+            <article class="card">
+              <h3>Терапія</h3>
+              <p>Лікування карієсу, пломбування, ендодонтія.</p>
+            </article>
+            <article class="card">
+              <h3>Ортопедія</h3>
+              <p>Коронки, вініри, протезування.</p>
+            </article>
+            <article class="card">
+              <h3>Хірургія</h3>
+              <p>Видалення, імплантація, пластика.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="prices" data-reveal>
+        <div class="container">
+          <h2>Ціни</h2>
+          <div class="prices">
+            <details open>
+              <summary>Терапія</summary>
+              <div class="price-row">
+                <span>Консультація</span><b>від 500 грн</b>
+              </div>
+              <div class="price-row">
+                <span>Пломба</span><b>від 1200 грн</b>
+              </div>
+            </details>
+            <details>
+              <summary>Ортодонтія</summary>
+              <div class="price-row">
+                <span>Діагностика</span><b>від 800 грн</b>
+              </div>
+              <div class="price-row"><span>Елайнери</span><b>від … грн</b></div>
+            </details>
+            <p class="muted">
+              Точна вартість визначається після огляду та діагностики.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="doctors" data-reveal>
+        <div class="container">
+          <h2>Наші лікарі</h2>
+          <div class="cards cards--people">
+            <article class="card person">
+              <img src="/img/d1.jpg" alt="Лікар" />
+              <h3>Імʼя Прізвище</h3>
+              <p class="muted">Ортодонт • 8+ років</p>
+            </article>
+            <article class="card person">
+              <img src="/img/d2.jpg" alt="Лікар" />
+              <h3>Імʼя Прізвище</h3>
+              <p class="muted">Терапевт • ендодонтія</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery" data-reveal>
+        <div class="container">
+          <h2>Галерея</h2>
+
+          <div class="slider" data-slider>
+            <button class="slider__btn" data-prev aria-label="Previous">
+              ‹
+            </button>
+
+            <div class="slider__viewport">
+              <div class="slider__track" data-track>
+                <img src="/img/g1.jpg" alt="Фото 1" />
+                <img src="/img/g2.jpg" alt="Фото 2" />
+                <img src="/img/g3.jpg" alt="Фото 3" />
+                <img src="/img/g4.jpg" alt="Фото 4" />
+              </div>
+            </div>
+
+            <button class="slider__btn" data-next aria-label="Next">›</button>
+            <div class="slider__dots" data-dots></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacts" data-reveal>
+        <div class="container">
+          <h2>Контакти</h2>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <p>
+                <b>Адреса:</b>
+                <span data-address>Люстдорфська дорога 55М, Одеса</span>
+              </p>
+              <p><b>Графік:</b> <span data-hours>Пн–Сб 10:00–19:00</span></p>
+
+              <div class="contact-actions">
+                <a
+                  class="btn btn--tg"
+                  data-tg
+                  href="https://t.me/USERNAME"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Telegram</a
+                >
+                <a
+                  class="btn btn--viber"
+                  data-viber
+                  href="viber://chat?number=%2B380XXXXXXXXX"
+                  >Viber</a
+                >
+                <a class="btn btn--phone" data-phone href="tel:+380XXXXXXXXX"
+                  >+380 XX XXX XX XX</a
+                >
+              </div>
+
+              <form class="form" data-tg-form>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Ваше ім’я"
+                  required
+                />
+                <input name="phone" type="tel" placeholder="Телефон" required />
+                <textarea
+                  name="msg"
+                  placeholder="Коротко: що турбує?"
+                ></textarea>
+                <button class="btn" type="submit">Надіслати</button>
+                <p class="muted">
+                  Без бекенду: відкриваємо Telegram з готовим повідомленням.
+                </p>
+              </form>
+            </div>
+
+            <div class="map">
+              <div class="map__placeholder">Тут буде Google Maps iframe</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="muted">© EKvilibrium Clinic</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
