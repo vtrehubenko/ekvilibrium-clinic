@@ -45,7 +45,7 @@
                   class="clinic__item"
                   type="button"
                   role="menuitem"
-                  data-clinic-item="odesa"
+                  data-clinic-item="lustdorf"
                 >
                   Люстдорфська дорога 55М
                 </button>
@@ -53,7 +53,7 @@
                   class="clinic__item"
                   type="button"
                   role="menuitem"
-                  data-clinic-item="clinic2"
+                  data-clinic-item="bazar"
                 >
                   Базарна 26
                 </button>
@@ -235,8 +235,6 @@
                 підбирають оптимальний план лікування.
               </p>
             </div>
-
-            <a class="btn btn--ghost team__cta" href="#contacts">Записатися</a>
           </div>
 
           <div class="team__grid">
@@ -383,26 +381,37 @@
         </div>
       </div>
 
-      <section class="section" id="gallery" data-reveal>
+      <section class="section clinic-gallery" id="clinicGallery">
         <div class="container">
-          <h2>Галерея</h2>
+          <div class="clinic-gallery__head">
+            <h2 class="clinic-gallery__title">Галерея клініки</h2>
+            <p class="clinic-gallery__subtitle muted">
+              Фото кабінетів і зони очікування обраної локації
+            </p>
+          </div>
 
-          <div class="slider" data-slider>
-            <button class="slider__btn" data-prev aria-label="Previous">
+          <div class="gallery" data-clinic-gallery>
+            <button
+              class="gallery__nav gallery__nav--prev"
+              type="button"
+              aria-label="Предыдущее фото"
+            >
               ‹
             </button>
 
-            <div class="slider__viewport">
-              <div class="slider__track" data-track>
-                <img src="/img/g1.jpg" alt="Фото 1" />
-                <img src="/img/g2.jpg" alt="Фото 2" />
-                <img src="/img/g3.jpg" alt="Фото 3" />
-                <img src="/img/g4.jpg" alt="Фото 4" />
-              </div>
+            <div class="gallery__viewport">
+              <div class="gallery__track" data-gallery-track></div>
             </div>
 
-            <button class="slider__btn" data-next aria-label="Next">›</button>
-            <div class="slider__dots" data-dots></div>
+            <button
+              class="gallery__nav gallery__nav--next"
+              type="button"
+              aria-label="Следующее фото"
+            >
+              ›
+            </button>
+
+            <div class="gallery__dots" data-gallery-dots></div>
           </div>
         </div>
       </section>

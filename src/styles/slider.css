@@ -67,3 +67,115 @@
   background: rgba(26, 166, 255, 0.55);
   border-color: rgba(26, 166, 255, 0.7);
 }
+
+.clinic-gallery {
+  padding: 72px 0 90px;
+}
+
+.clinic-gallery__head {
+  margin-bottom: 18px;
+}
+
+.gallery {
+  position: relative;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gallery__viewport {
+  overflow: hidden;
+}
+
+.gallery__track {
+  display: flex;
+  transition: transform 360ms ease;
+  will-change: transform;
+}
+
+.gallery__slide {
+  min-width: 100%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #eef2f7;
+}
+
+.gallery__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery__caption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.62);
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  max-width: min(520px, 90%);
+  backdrop-filter: blur(8px);
+}
+
+.gallery__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.gallery__nav:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.gallery__nav--prev {
+  left: 14px;
+}
+.gallery__nav--next {
+  right: 14px;
+}
+
+.gallery__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0 14px;
+}
+
+.gallery__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(15, 23, 42, 0.2);
+  cursor: pointer;
+}
+
+.gallery__dot.is-active {
+  background: rgba(96, 165, 250, 0.9);
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .gallery__nav {
+    display: none;
+  }
+  .gallery__slide {
+    aspect-ratio: 4 / 3;
+  }
+}

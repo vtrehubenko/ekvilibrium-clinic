@@ -1,8 +1,8 @@
 const STORAGE_KEY = "ek_selected_clinic";
 
 const CLINICS = {
-  odesa: {
-    key: "odesa",
+  lustdorf: {
+    key: "lustdorf",
     label: "Одеса",
     address: "Люстдорфська дорога 55М, Одеса",
     hours: "Пн–Сб 10:00–19:00",
@@ -12,8 +12,8 @@ const CLINICS = {
     mapAddress: "Люстдорфська дорога 55М, Одеса",
     heroCity: "Одесі",
   },
-  clinic2: {
-    key: "clinic2",
+  bazar: {
+    key: "bazar",
     label: "Одеса",
     address: "Базарна 26, Одеса",
     hours: "Пн–Сб 10:00–19:00",
@@ -62,7 +62,7 @@ export function initClinicDropdown() {
   }
 
   function setActiveClinic(key) {
-    const clinic = CLINICS[key] || CLINICS.odesa;
+    const clinic = CLINICS[key] || CLINICS.lustdorf;
 
     currentEl.textContent = clinic.label;
 
@@ -103,10 +103,13 @@ export function initClinicDropdown() {
     try {
       localStorage.setItem(STORAGE_KEY, clinic.key);
     } catch (_) {}
+    window.dispatchEvent(
+      new CustomEvent("clinic:change", { detail: { key: clinic.key } }),
+    );
   }
 
   const saved = safeGet(STORAGE_KEY);
-  setActiveClinic(saved && CLINICS[saved] ? saved : "odesa");
+  setActiveClinic(saved && CLINICS[saved] ? saved : "lustdorf");
 
   btn.addEventListener("click", toggleMenu);
 
