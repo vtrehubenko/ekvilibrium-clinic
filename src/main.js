@@ -7,6 +7,7 @@ import { initTelegramForm } from "./js/telegram.js";
 import { initClinicDropdown } from "./js/clinic.js";
 import { initContactForm } from "./js/contact.js";
 import { initBookingModal } from "./js/modal.js";
+import { initHeroAnimation } from "./js/hero-animation.js";
 
 initNav();
 initReveal();
@@ -15,3 +16,4 @@ initTelegramForm();
 initClinicDropdown();
 initContactForm();
 initBookingModal();
+initHeroAnimation();
