@@ -1,0 +1,111 @@
+.team__grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 16px;
+}
+
+/* 1 col by default (mobile-first) */
+.team__grid {
+  grid-template-columns: 1fr;
+}
+
+/* >= 641px — 2 cols */
+@media (min-width: 641px) {
+  .team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* >= 1024px — 2x2 (premium look on laptops) */
+@media (min-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+}
+
+/* >= 1280px — 4 in a row */
+@media (min-width: 1280px) {
+  .team__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.doctor {
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 50px rgba(11, 18, 32, 0.12);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.doctor:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 70px rgba(11, 18, 32, 0.16);
+}
+
+.doctor__media {
+  padding: 18px 18px 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(11, 18, 32, 0.06),
+    rgba(11, 18, 32, 0) 60%
+  );
+}
+
+.doctor__media img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+  border-radius: 16px;
+  background: #fff;
+}
+
+@media (min-width: 1024px) {
+  .doctor__media img {
+    height: 340px;
+  }
+}
+
+.doctor__body {
+  padding: 14px 16px 16px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.doctor__name {
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0;
+}
+
+.doctor__role {
+  margin: 0;
+}
+
+.doctor__more {
+  justify-self: start;
+  margin-top: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(11, 18, 32, 0.04);
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.doctor__more:hover {
+  transform: translateY(-1px);
+  background: rgba(11, 18, 32, 0.06);
+}

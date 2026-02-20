@@ -14,7 +14,7 @@ const CLINICS = {
   },
   clinic2: {
     key: "clinic2",
-    label: "Клініка №2",
+    label: "Одеса",
     address: "Базарна 26, Одеса",
     hours: "Пн–Сб 10:00–19:00",
     phone: "+380506820169",

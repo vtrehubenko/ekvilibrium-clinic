@@ -30,13 +30,11 @@ export function initBookingModal() {
     document.body.style.overflow = "";
   }
 
-  // ✅ ВАЖНО: на старте всегда закрываем
   close();
 
   openBtns.forEach((b) => b.addEventListener("click", open));
   closeBtns.forEach((b) => b.addEventListener("click", close));
 
-  // ✅ Закрытие кликом по фону (backdrop)
   modal.addEventListener("click", (e) => {
     if (e.target === modal) close();
   });
