@@ -17,18 +17,54 @@ body {
     Roboto,
     Arial;
   color: var(--text);
+  background: #f8fafc;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
   background:
     radial-gradient(
-      900px 520px at 20% -10%,
-      rgba(26, 166, 255, 0.18),
-      transparent 60%
+      900px 520px at 88% -10%,
+      rgba(96, 165, 250, 0.18) 0%,
+      rgba(96, 165, 250, 0.06) 42%,
+      transparent 72%
     ),
     radial-gradient(
-      800px 520px at 80% 0%,
-      rgba(124, 77, 255, 0.14),
-      transparent 55%
+      820px 520px at 10% 35vh,
+      rgba(244, 114, 182, 0.12) 0%,
+      rgba(244, 114, 182, 0.04) 45%,
+      transparent 75%
     ),
-    var(--bg);
+    radial-gradient(
+      900px 560px at 85% 85vh,
+      rgba(96, 165, 250, 0.12) 0%,
+      rgba(96, 165, 250, 0.04) 45%,
+      transparent 74%
+    ),
+    radial-gradient(
+      820px 560px at 12% 135vh,
+      rgba(244, 114, 182, 0.1) 0%,
+      rgba(244, 114, 182, 0.03) 45%,
+      transparent 75%
+    ),
+    radial-gradient(
+      900px 560px at 88% 185vh,
+      rgba(96, 165, 250, 0.1) 0%,
+      transparent 72%
+    ),
+    radial-gradient(
+      820px 560px at 8% 235vh,
+      rgba(244, 114, 182, 0.08) 0%,
+      transparent 74%
+    ),
+    linear-gradient(#f8fafc, #f8fafc);
+
+  filter: blur(0px);
 }
 
 img {
