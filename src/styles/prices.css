@@ -1,0 +1,45 @@
+.prices details {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.prices summary {
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--text);
+  padding: 8px 0;
+  line-height: 1.3;
+  user-select: none;
+}
+
+.prices details > summary {
+  list-style: none;
+}
+
+.prices details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.price-row span {
+  color: var(--muted);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.price-row b {
+  color: var(--text);
+  white-space: nowrap;
+}

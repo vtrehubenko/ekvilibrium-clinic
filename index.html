@@ -21,7 +21,9 @@
                 data-clinic-btn
                 aria-expanded="false"
               >
-                <span class="clinic__current" data-clinic-current>Одеса</span>
+                <span class="clinic__current" data-clinic-current
+                  >Люстдорфська дорога</span
+                >
                 <span class="clinic__chev" aria-hidden="true">▾</span>
               </button>
 
@@ -37,7 +39,7 @@
                   role="menuitem"
                   data-clinic-item="odesa"
                 >
-                  Одеса — Люстдорфська дорога 55М
+                  Люстдорфська дорога 55М
                 </button>
                 <button
                   class="clinic__item"
@@ -53,8 +55,8 @@
         </div>
 
         <nav class="nav" data-nav>
-          <a href="#services">Послуги</a>
-          <a href="#prices">Ціни</a>
+          <a href="/services.html">Послуги</a>
+          <a href="/services.html">Ціни</a>
           <a href="#doctors">Наші лікарі</a>
           <a href="#gallery">Галерея</a>
           <a href="#contacts">Контакти</a>
@@ -77,22 +79,6 @@
               Терапія • Ортодонтія • Ортопедія • Хірургія. Дбайливий підхід і
               сучасне обладнання.
             </p>
-
-            <div class="hero__cta">
-              <a
-                class="btn"
-                href="https://t.me/USERNAME"
-                target="_blank"
-                rel="noreferrer"
-                >Telegram</a
-              >
-              <a
-                class="btn btn--ghost"
-                href="viber://chat?number=%2B380XXXXXXXXX"
-                >Viber</a
-              >
-            </div>
-
             <div class="hero__badges">
               <div class="badge">Стерильність</div>
               <div class="badge">Сучасна діагностика</div>
@@ -157,23 +143,167 @@
         </div>
       </section>
 
-      <section class="section" id="doctors" data-reveal>
+      <section class="section team" id="doctors" data-reveal>
         <div class="container">
-          <h2>Наші лікарі</h2>
-          <div class="cards cards--people">
-            <article class="card person">
-              <img src="/img/d1.jpg" alt="Лікар" />
-              <h3>Імʼя Прізвище</h3>
-              <p class="muted">Ортодонт • 8+ років</p>
+          <div class="team__top">
+            <div>
+              <h2 class="team__title">Наша команда</h2>
+              <p class="team__subtitle muted">
+                Лікарі, які працюють акуратно, пояснюють простими словами і
+                підбирають оптимальний план лікування.
+              </p>
+            </div>
+
+            <a class="btn btn--ghost team__cta" href="#contacts">Записатися</a>
+          </div>
+
+          <div class="team__grid">
+            <!-- CARD 1 -->
+            <article
+              class="doctor"
+              data-doctor
+              data-name="Ольга"
+              data-role="Лікар-стоматолог"
+              data-exp="10+ років досвіду"
+              data-about="Працює делікатно та уважно, підбирає індивідуальний план лікування. Консультація з поясненням кожного етапу."
+              data-tags="Терапія,Профілактика,Консультації"
+              data-img="/img/doctors/olga_o.png"
+            >
+              <div class="doctor__media">
+                <img
+                  src="/img/doctors/olga_o.png"
+                  alt="Ольга — Лікар-стоматолог"
+                  loading="lazy"
+                />
+              </div>
+              <div class="doctor__body">
+                <h3 class="doctor__name">Ольга</h3>
+                <p class="doctor__role muted">Лікар-стоматолог</p>
+                <button class="doctor__more" type="button">Подробнее</button>
+              </div>
             </article>
-            <article class="card person">
-              <img src="/img/d2.jpg" alt="Лікар" />
-              <h3>Імʼя Прізвище</h3>
-              <p class="muted">Терапевт • ендодонтія</p>
+
+            <!-- CARD 2 -->
+            <article
+              class="doctor"
+              data-doctor
+              data-name="Ольга (Клініка)"
+              data-role="Асистент / Адміністратор"
+              data-exp="Організація прийому"
+              data-about="Координує запис, підказує по підготовці до візиту, допомагає обрати зручний час та клініку."
+              data-tags="Запис,Комунікація,Супровід"
+              data-img="/img/doctors/olga_i.png"
+            >
+              <div class="doctor__media">
+                <img
+                  src="/img/doctors/olga_i.png"
+                  alt="Ольга — команда клініки"
+                  loading="lazy"
+                />
+              </div>
+              <div class="doctor__body">
+                <h3 class="doctor__name">Ольга</h3>
+                <p class="doctor__role muted">Команда клініки</p>
+                <button class="doctor__more" type="button">Подробнее</button>
+              </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article
+              class="doctor"
+              data-doctor
+              data-name="Асмолова"
+              data-role="Стоматолог / Ортодонтія"
+              data-exp="8+ років досвіду"
+              data-about="Ортодонтичні консультації, планування лікування, ведення пацієнтів. Пояснює варіанти та бюджет прозоро."
+              data-tags="Ортодонтія,План лікування,Діагностика"
+              data-img="/img/doctors/asmolova.png"
+            >
+              <div class="doctor__media">
+                <img
+                  src="/img/doctors/asmolova.png"
+                  alt="Асмолова — Ортодонтія"
+                  loading="lazy"
+                />
+              </div>
+              <div class="doctor__body">
+                <h3 class="doctor__name">Асмолова</h3>
+                <p class="doctor__role muted">Ортодонтія</p>
+                <button class="doctor__more" type="button">Подробнее</button>
+              </div>
+            </article>
+
+            <!-- CARD 4 -->
+            <article
+              class="doctor"
+              data-doctor
+              data-name="Єкатерина"
+              data-role="Стоматолог"
+              data-exp="Професійний підхід"
+              data-about="Працює акуратно, приділяє увагу діагностиці та профілактиці. Пояснює рекомендації простими словами."
+              data-tags="Терапія,Гігієна,Профілактика"
+              data-img="/img/doctors/ekaterina.png"
+            >
+              <div class="doctor__media">
+                <img
+                  src="/img/doctors/ekaterina.png"
+                  alt="Єкатерина — Стоматолог"
+                  loading="lazy"
+                />
+              </div>
+              <div class="doctor__body">
+                <h3 class="doctor__name">Єкатерина</h3>
+                <p class="doctor__role muted">Стоматолог</p>
+                <button class="doctor__more" type="button">Подробнее</button>
+              </div>
             </article>
           </div>
         </div>
       </section>
+
+      <!-- MODAL -->
+      <div class="modal" data-doctor-modal aria-hidden="true">
+        <div class="modal__backdrop" data-close-doctor></div>
+
+        <div
+          class="modal__card"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Doctor details"
+        >
+          <button
+            class="modal__close"
+            type="button"
+            data-close-doctor
+            aria-label="Close"
+          >
+            ✕
+          </button>
+
+          <div class="modal__grid">
+            <div class="modal__media">
+              <img data-modal-img alt="" />
+            </div>
+
+            <div class="modal__content">
+              <div class="modal__title" data-modal-name>—</div>
+              <div class="modal__meta muted" data-modal-role>—</div>
+              <div class="modal__pill" data-modal-exp>—</div>
+
+              <p class="modal__about" data-modal-about></p>
+
+              <div class="modal__tags" data-modal-tags></div>
+
+              <div class="modal__actions">
+                <a class="btn" href="#contacts" data-close-doctor>Записатися</a>
+                <a class="btn btn--ghost" href="#services" data-close-doctor
+                  >Послуги</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section class="section" id="gallery" data-reveal>
         <div class="container">
@@ -210,44 +340,13 @@
                 <span data-address>Люстдорфська дорога 55М, Одеса</span>
               </p>
               <p><b>Графік:</b> <span data-hours>Пн–Сб 10:00–19:00</span></p>
+              <button class="btn btn--primary" type="button" data-open-booking>
+                Записатися на консультацію
+              </button>
 
-              <div class="contact-actions">
-                <a
-                  class="btn btn--tg"
-                  data-tg
-                  href="https://t.me/USERNAME"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Telegram</a
-                >
-                <a
-                  class="btn btn--viber"
-                  data-viber
-                  href="viber://chat?number=%2B380XXXXXXXXX"
-                  >Viber</a
-                >
-                <a class="btn btn--phone" data-phone href="tel:+380XXXXXXXXX"
-                  >+380 XX XXX XX XX</a
-                >
-              </div>
-
-              <form class="form" data-tg-form>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Ваше ім’я"
-                  required
-                />
-                <input name="phone" type="tel" placeholder="Телефон" required />
-                <textarea
-                  name="msg"
-                  placeholder="Коротко: що турбує?"
-                ></textarea>
-                <button class="btn" type="submit">Надіслати</button>
-                <p class="muted">
-                  Без бекенду: відкриваємо Telegram з готовим повідомленням.
-                </p>
-              </form>
+              <p class="muted">
+                Ми підтвердимо запис протягом 15 хвилин у робочий час.
+              </p>
             </div>
 
             <div class="map">
@@ -271,5 +370,74 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <div class="modal" data-modal aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal></div>
+
+      <div
+        class="modal__card"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Записатися"
+      >
+        <div class="modal__top">
+          <div>
+            <div class="modal__title">Записатися на консультацію</div>
+            <div class="modal__sub muted">
+              <span data-modal-clinic>Одеса</span> •
+              <span data-modal-address>Люстдорфська дорога 55М</span>
+            </div>
+          </div>
+
+          <button
+            class="icon-btn"
+            type="button"
+            data-close-modal
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="modal__grid">
+          <a
+            class="modal__action modal__action--phone"
+            data-phone
+            href="tel:+380XXXXXXXXX"
+          >
+            <div class="modal__actionTitle">Подзвонити</div>
+            <div class="muted">Найшвидший спосіб</div>
+          </a>
+
+          <a
+            class="modal__action modal__action--tg"
+            data-tg
+            href="https://t.me/USERNAME"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="modal__actionTitle">Telegram</div>
+            <div class="muted">Написати в чат</div>
+          </a>
+
+          <a
+            class="modal__action modal__action--viber"
+            data-viber
+            href="viber://chat?number=%2B380XXXXXXXXX"
+          >
+            <div class="modal__actionTitle">Viber</div>
+            <div class="muted">Написати у Viber</div>
+          </a>
+        </div>
+
+        <div class="modal__note muted">
+          Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
+          запитання.
+        </div>
+      </div>
+    </div>
+
+    <button class="fab" type="button" data-open-booking aria-label="Записатися">
+      Записатися
+    </button>
   </body>
 </html>

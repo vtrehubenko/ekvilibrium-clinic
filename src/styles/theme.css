@@ -1,0 +1,15 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #0b1220;
+  --muted: #5b6b82;
+  --line: rgba(11, 18, 32, 0.1);
+  --shadow: 0 12px 30px rgba(11, 18, 32, 0.08);
+  --radius: 18px;
+
+  --accent: #1aa6ff;
+
+  --tg: #27a7e7;
+  --viber: #7c4dff;
+  --phone: #20b26b;
+}

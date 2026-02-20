@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Послуги та ціни — EKvilibrium Clinic</title>
+  </head>
+  <body>
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <a class="brand" href="/">
+          <img class="brand__logo" src="/img/logo.svg" alt="EK" />
+          <div class="brand__info">
+            <span class="brand__name">EKvilibrium Clinic</span>
+            <span class="muted" style="font-size: 12px">Послуги та ціни</span>
+          </div>
+        </a>
+
+        <nav class="nav" data-nav>
+          <a href="/#doctors">Наші лікарі</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#contacts">Контакти</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="btn btn--ghost" href="/">На головну</a>
+          <a class="btn" href="/#contacts">Записатися</a>
+          <button class="burger" data-burger aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" data-reveal>
+        <div class="container">
+          <h1 style="margin-bottom: 10px">Ціни на послуги</h1>
+          <p class="muted" style="max-width: 70ch">
+            Остаточна вартість залежить від клінічної ситуації та визначається
+            після консультації і діагностики.
+          </p>
+
+          <div class="service-grid" style="margin-top: 22px">
+            <a class="service-tile" href="#therapy" data-service="therapy">
+              <img src="/img/icons/therapy.svg" alt="" />
+              <div class="service-title">Терапія</div>
+              <div class="muted">Карієс, пломби, ендодонтія</div>
+            </a>
+
+            <a class="service-tile" href="#ortho" data-service="ortho">
+              <img src="/img/icons/ortho.svg" alt="" />
+              <div class="service-title">Ортодонтія</div>
+              <div class="muted">Брекети, елайнери</div>
+            </a>
+
+            <a
+              class="service-tile"
+              href="#prosthetics"
+              data-service="prosthetics"
+            >
+              <img src="/img/icons/prosthetics.svg" alt="" />
+              <div class="service-title">Ортопедія</div>
+              <div class="muted">Коронки, вініри</div>
+            </a>
+
+            <a class="service-tile" href="#surgery" data-service="surgery">
+              <img src="/img/icons/surgery.svg" alt="" />
+              <div class="service-title">Хірургія</div>
+              <div class="muted">Видалення, імплантація</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="prices" data-reveal>
+        <div class="container">
+          <h2>Прайс</h2>
+
+          <div class="price-table" id="therapy">
+            <div class="price-head">
+              <h3>Терапія</h3>
+              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+            </div>
+            <div class="price-row">
+              <span>Консультація</span><b>від 500 грн</b>
+            </div>
+            <div class="price-row"><span>Пломба</span><b>від 1200 грн</b></div>
+          </div>
+
+          <div class="price-table" id="ortho">
+            <div class="price-head">
+              <h3>Ортодонтія</h3>
+              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+            </div>
+            <div class="price-row">
+              <span>Діагностика</span><b>від 800 грн</b>
+            </div>
+            <div class="price-row"><span>Елайнери</span><b>від … грн</b></div>
+          </div>
+
+          <div class="price-table" id="prosthetics">
+            <div class="price-head">
+              <h3>Ортопедія</h3>
+              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+            </div>
+            <div class="price-row"><span>Коронка</span><b>від … грн</b></div>
+            <div class="price-row"><span>Вініри</span><b>від … грн</b></div>
+          </div>
+
+          <div class="price-table" id="surgery">
+            <div class="price-head">
+              <h3>Хірургія</h3>
+              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+            </div>
+            <div class="price-row"><span>Видалення</span><b>від … грн</b></div>
+            <div class="price-row">
+              <span>Імплантація</span><b>від … грн</b>
+            </div>
+          </div>
+
+          <p class="muted" style="margin-top: 14px">
+            Точна вартість визначається після огляду та діагностики.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="muted">© EKvilibrium Clinic</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/services.js"></script>
+  </body>
+</html>

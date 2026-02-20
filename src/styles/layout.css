@@ -1,0 +1,8 @@
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 72px 0;
+}

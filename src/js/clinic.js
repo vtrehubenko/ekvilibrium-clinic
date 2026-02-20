@@ -6,49 +6,46 @@ const CLINICS = {
     label: "Одеса",
     address: "Люстдорфська дорога 55М, Одеса",
     hours: "Пн–Сб 10:00–19:00",
-    phone: "+380991234567",
-    telegram: "USERNAME1",
-    viber: "+380991234567",
+    phone: "+380506820169",
+    telegram: "tombri",
+    viber: "+380506820169",
     mapAddress: "Люстдорфська дорога 55М, Одеса",
+    heroCity: "Одесі",
   },
   clinic2: {
     key: "clinic2",
     label: "Клініка №2",
     address: "Базарна 26, Одеса",
     hours: "Пн–Сб 10:00–19:00",
-    phone: "+380991112233",
-    telegram: "USERNAME2",
-    viber: "+380991112233",
+    phone: "+380506820169",
+    telegram: "tombri",
+    viber: "+380506820169",
     mapAddress: "Базарна 26, Одеса",
+    heroCity: "Одесі",
   },
 };
 
 export function initClinicDropdown() {
-  // Dropdown elements
-  const root = document.querySelector("[data-clinic]"); // wrapper .clinic
+  const root = document.querySelector("[data-clinic]");
   const btn = document.querySelector("[data-clinic-btn]");
   const menu = document.querySelector("[data-clinic-menu]");
   const currentEl = document.querySelector("[data-clinic-current]");
   const items = Array.from(document.querySelectorAll("[data-clinic-item]"));
 
-  // Elements to update
   const addressEl = document.querySelector("[data-address]");
   const hoursEl = document.querySelector("[data-hours]");
-  const phoneBtn = document.querySelector("[data-phone]");
-  const tgBtn = document.querySelector("[data-tg]");
-  const viberBtn = document.querySelector("[data-viber]");
-  const mapIframe = document.querySelector("[data-map-iframe]");
 
-  // (optional) hero title city placeholder
+  const phoneBtns = document.querySelectorAll("[data-phone]");
+  const tgBtns = document.querySelectorAll("[data-tg]");
+  const viberBtns = document.querySelectorAll("[data-viber]");
+
+  const mapIframe = document.querySelector("[data-map-iframe]");
   const heroCityEl = document.querySelector("[data-hero-city]");
 
-  // minimal validation
   if (!btn || !menu || !currentEl || items.length === 0) return;
 
-  // wrapper for is-open class
   const wrapper = root || btn.closest(".clinic") || btn.parentElement;
 
-  // --- dropdown controls ---
   function openMenu() {
     wrapper.classList.add("is-open");
     btn.setAttribute("aria-expanded", "true");
@@ -61,81 +58,75 @@ export function initClinicDropdown() {
 
   function toggleMenu(e) {
     e?.stopPropagation();
-    if (wrapper.classList.contains("is-open")) closeMenu();
-    else openMenu();
+    wrapper.classList.contains("is-open") ? closeMenu() : openMenu();
   }
 
-  // --- apply clinic ---
   function setActiveClinic(key) {
     const clinic = CLINICS[key] || CLINICS.odesa;
 
-    // header current label
     currentEl.textContent = clinic.label;
 
-    // active state in menu
     items.forEach((it) => {
       it.classList.toggle("is-active", it.dataset.clinicItem === clinic.key);
     });
 
-    // update contacts
     if (addressEl) addressEl.textContent = clinic.address;
     if (hoursEl) hoursEl.textContent = clinic.hours;
 
-    if (phoneBtn) {
-      phoneBtn.href = `tel:${clinic.phone}`;
-      phoneBtn.textContent = clinic.phone;
+    if (phoneBtns.length) {
+      phoneBtns.forEach((el) => {
+        el.href = `tel:${clinic.phone}`;
+        el.textContent = clinic.phone;
+      });
     }
 
-    if (tgBtn) {
-      tgBtn.href = `https://t.me/${clinic.telegram}`;
+    if (tgBtns.length) {
+      tgBtns.forEach((el) => {
+        el.href = `https://t.me/${clinic.telegram}`;
+      });
     }
 
-    if (viberBtn) {
+    if (viberBtns.length) {
       const enc = encodeURIComponent(clinic.viber);
-      viberBtn.href = `viber://chat?number=${enc}`;
+      viberBtns.forEach((el) => {
+        el.href = `viber://chat?number=${enc}`;
+      });
     }
+
     if (mapIframe && clinic.mapAddress) {
       const q = encodeURIComponent(clinic.mapAddress);
       mapIframe.src = `https://www.google.com/maps?q=${q}&output=embed`;
     }
 
-    // optional: update hero city word
-    if (heroCityEl) heroCityEl.textContent = clinic.heroCity;
+    if (heroCityEl && clinic.heroCity) heroCityEl.textContent = clinic.heroCity;
 
-    // save
     try {
       localStorage.setItem(STORAGE_KEY, clinic.key);
     } catch (_) {}
   }
 
-  // --- init from storage ---
   const saved = safeGet(STORAGE_KEY);
   setActiveClinic(saved && CLINICS[saved] ? saved : "odesa");
 
-  // --- events ---
   btn.addEventListener("click", toggleMenu);
 
   items.forEach((it) => {
     it.addEventListener("click", (e) => {
       e.stopPropagation();
-      const key = it.dataset.clinicItem;
-      setActiveClinic(key);
+      setActiveClinic(it.dataset.clinicItem);
       closeMenu();
     });
   });
 
-  // close on outside click
   document.addEventListener("click", (e) => {
     if (!wrapper.contains(e.target)) closeMenu();
   });
 
-  // close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 }
 
-/** localStorage safe getter */
 function safeGet(key) {
   try {
     return localStorage.getItem(key);
