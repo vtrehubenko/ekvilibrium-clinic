@@ -49,15 +49,35 @@ No frameworks (React/Vue/etc.) were used — the project is built with clean, mo
 
 📂 Project Structure
 /src
-  /js
-    clinic.js
-    slider.js
-    nav.js
-    reveal.js
-    telegram.js
-  /styles
-    main.css
+/js
+clinic.js
+slider.js
+nav.js
+reveal.js
+telegram.js
+/styles
+/pages
+services.css
+main.css
+animation.css
+base.css
+buttons.css
+cards.css
+clinic-dropdown.css
+contacts.css
+doctors.css
+header.css
+hero.css
+layout.css
+logo.css
+modal.css
+prices.css
+slider.css
+theme.css
+main.js
+services.js  
 index.html
+services.html
 
 💼 Commercial Experience
 
