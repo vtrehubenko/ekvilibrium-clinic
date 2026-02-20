@@ -20,41 +20,74 @@
   pointer-events: none;
 }
 
+/* GRID */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 22px;
+  gap: 22px;
 }
 
+/* CARD */
 .service-tile {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 18px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: flex-start;
+
+  padding: 26px 22px;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+
   transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  text-decoration: none;
+  color: inherit;
 }
 
+/* HOVER */
 .service-tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(11, 18, 32, 0.14);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  border-color: color-mix(in srgb, var(--accent) 40%, white);
 }
 
+/* ICON */
 .service-tile img {
-  width: 64px;
-  height: 64px;
-  opacity: 0.95;
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+
+  margin-bottom: 20px;
+
+  opacity: 0.9;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
+.service-tile:hover img {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* TITLE */
 .service-title {
-  font-weight: 900;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* DESCRIPTION */
+.service-tile .muted {
+  font-size: 14px;
+  opacity: 0.75;
 }
 
 .price-table {
