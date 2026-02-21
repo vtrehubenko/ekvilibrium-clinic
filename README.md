@@ -47,6 +47,38 @@ LocalStorage API
 
 No frameworks (React/Vue/etc.) were used — the project is built with clean, modular frontend architecture.
 
+📂 Project Structure
+/src
+/js
+clinic.js
+slider.js
+nav.js
+reveal.js
+telegram.js
+/styles
+/pages
+services.css
+main.css
+animation.css
+base.css
+buttons.css
+cards.css
+clinic-dropdown.css
+contacts.css
+doctors.css
+header.css
+hero.css
+layout.css
+logo.css
+modal.css
+prices.css
+slider.css
+theme.css
+main.js
+services.js  
+index.html
+services.html
+
 💼 Commercial Experience
 
 This project represents my first real-world commercial frontend implementation.
