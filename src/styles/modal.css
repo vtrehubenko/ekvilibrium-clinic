@@ -8,15 +8,25 @@
   cursor: pointer;
 }
 
-/* Modal */
+/* Booking modal (centered) */
 .modal {
   position: fixed;
   inset: 0;
   display: none;
-  z-index: 999;
+  place-items: center;
+  padding: 22px;
+  z-index: 1000;
 }
+
 .modal.is-open {
-  display: block;
+  display: grid;
+}
+
+.modal[aria-hidden="true"] {
+  display: none !important;
+}
+.modal[aria-hidden="false"] {
+  display: grid !important;
 }
 
 .modal__backdrop {
@@ -27,15 +37,13 @@
 }
 
 .modal__card {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(560px, 92vw);
+  position: relative;
+  z-index: 1;
+  width: min(720px, 92vw);
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid var(--line);
-  box-shadow: 0 26px 70px rgba(11, 18, 32, 0.3);
+  box-shadow: 0 26px 70px rgba(11, 18, 32, 0.28);
   padding: 16px;
   animation: modalIn 0.18s ease-out;
 }
@@ -43,11 +51,11 @@
 @keyframes modalIn {
   from {
     opacity: 0;
-    transform: translate(-50%, -52%) scale(0.98);
+    transform: translateY(6px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -109,64 +117,99 @@
   padding-top: 6px;
 }
 
-/* Floating button */
-.fab {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 998;
-  padding: 12px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(11, 18, 32, 0.1);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 20px 50px rgba(11, 18, 32, 0.18);
-  font-weight: 900;
-  cursor: pointer;
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
-}
-
-.fab:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 26px 70px rgba(11, 18, 32, 0.24);
-}
-
-/* modal.css — hard reset/фикс */
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-items: center;
-  padding: 20px;
-  z-index: 1000;
-}
-
-.modal.is-open {
+/* Contact form inside modal */
+.contact-form {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
   display: grid;
+  gap: 12px;
 }
 
-.modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.35);
-  backdrop-filter: blur(2px);
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
-.modal__card {
-  position: relative;
-  z-index: 1;
-  width: min(720px, 100%);
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
-  overflow: hidden;
+.field__label {
+  display: block;
+  font-weight: 900;
+  font-size: 12px;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
 }
 
-.modal[aria-hidden="true"] {
-  display: none !important;
+.field__input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font: inherit;
+  background: rgba(255, 255, 255, 0.9);
 }
-.modal[aria-hidden="false"] {
-  display: grid !important;
+
+.field__textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+
+.contact-form__channels {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.chip.is-active {
+  border-color: rgba(11, 18, 32, 0.35);
+  box-shadow: 0 10px 26px rgba(11, 18, 32, 0.08);
+}
+
+.contact-form__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.small {
+  font-size: 12px;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  background: rgba(11, 18, 32, 0.92);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 1100;
+  font-weight: 700;
+}
+
+.toast.is-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+@media (max-width: 640px) {
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
 }

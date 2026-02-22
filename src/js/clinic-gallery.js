@@ -15,7 +15,7 @@ const GALLERIES = {
       {
         src: "/img/clinics/lustdorf/lobby1.jpg",
         alt: "Ресепшн — Люстдорфська",
-        caption: "Зона очікуванн / ресепшн",
+        caption: "Зона очікування / ресепшн",
       },
     ],
   },
@@ -143,7 +143,7 @@ export function initClinicGallery() {
 
 function getClinicFromStorage() {
   try {
-    return localStorage.getItem("clinic_id");
+    return localStorage.getItem("ek_selected_clinic");
   } catch {
     return null;
   }

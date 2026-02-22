@@ -4,5 +4,11 @@
 }
 
 .section {
-  padding: 72px 0;
+  padding: 64px 0;
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 48px 0;
+  }
 }

@@ -70,13 +70,13 @@
           <a href="/services.html">Послуги</a>
           <a href="/services.html">Ціни</a>
           <a href="#doctors">Наші лікарі</a>
-          <a href="#gallery">Галерея</a>
+          <a href="#clinicGallery">Галерея</a>
           <a href="#contacts">Контакти</a>
         </nav>
 
         <div class="header__actions">
-          <a class="btn btn--ghost" href="tel:+380XXXXXXXXX">Подзвонити</a>
-          <a class="btn" href="#contacts">Записатися</a>
+          <a class="btn btn--ghost" data-phone href="tel:+380506820169">+380506820169</a>
+          <button class="btn" type="button" data-open-booking>Записатися</button>
           <button class="burger" data-burger aria-label="Menu">☰</button>
         </div>
       </div>
@@ -427,7 +427,7 @@
               <div class="modal__tags" data-modal-tags></div>
 
               <div class="modal__actions">
-                <a class="btn" href="#contacts" data-close-doctor>Записатися</a>
+                <button class="btn" type="button" data-open-booking data-close-doctor>Записатися</button>
                 <a class="btn btn--ghost" href="#services" data-close-doctor
                   >Послуги</a
                 >
@@ -478,19 +478,40 @@
 
           <div class="contact-grid">
             <div class="contact-card">
-              <p>
-                <b>Адреса:</b>
-                <span data-address>Люстдорфська дорога 55М, Одеса</span>
-              </p>
-              <p><b>Графік:</b> <span data-hours>Пн–Сб 10:00–19:00</span></p>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <span class="contact-ico" aria-hidden="true">📍</span>
+                  <div>
+                    <div class="contact-label">Адреса</div>
+                    <div class="contact-value" data-address>Люстдорфська дорога 55М, Одеса</div>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <span class="contact-ico" aria-hidden="true">📞</span>
+                  <div>
+                    <div class="contact-label">Телефон</div>
+                    <a class="contact-value link" data-phone href="tel:+380506820169">+380506820169</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <span class="contact-ico" aria-hidden="true">🕘</span>
+                  <div>
+                    <div class="contact-label">Графік</div>
+                    <div class="contact-value" data-hours>Пн–Сб 10:00–19:00</div>
+                  </div>
+                </div>
+              </div>
+
               <button class="btn btn--primary" type="button" data-open-booking>
                 Записатися на консультацію
               </button>
 
-              <p class="muted">
+              <p class="muted contact-note">
                 Ми підтвердимо запис протягом 15 хвилин у робочий час.
               </p>
-            </div>
+</div>
 
             <div class="map">
               <iframe
@@ -576,7 +597,42 @@
           Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
           запитання.
         </div>
-      </div>
-    </div>
+      <div class="modal__note muted">
+          Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
+          запитання.
+        </div>
+      
+        <form class="contact-form" data-contact-form>
+          <div class="contact-form__row">
+            <label class="field">
+              <span class="field__label">Імʼя</span>
+              <input class="field__input" name="name" autocomplete="name" required placeholder="Як до вас звертатися?" />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Телефон</span>
+              <input class="field__input" name="phone" autocomplete="tel" required placeholder="+380…" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Коментар (необовʼязково)</span>
+            <textarea class="field__input field__textarea" name="msg" rows="3" placeholder="Наприклад: хочу гігієну / турбує зуб…"></textarea>
+          </label>
+
+          <div class="contact-form__channels">
+            <button class="chip is-active" type="button" data-channel="telegram">Telegram</button>
+            <button class="chip" type="button" data-channel="viber">Viber</button>
+            <span class="muted" data-send-hint>Telegram: відкриємо чат з готовим повідомленням.</span>
+          </div>
+
+          <div class="contact-form__actions">
+            <button class="btn btn--primary" type="submit">Надіслати</button>
+            <span class="muted small">Ми не зберігаємо дані — лише відкриваємо месенджер з готовим текстом.</span>
+          </div>
+        </form>
+</div>
+        <div class="toast" data-toast role="status" aria-live="polite"></div>
+</div>
   </body>
 </html>

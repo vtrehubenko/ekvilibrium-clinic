@@ -25,7 +25,7 @@ The project is built without heavy frameworks, focusing on performance and clean
 
 🖼 Custom-built image slider (Vanilla JS)
 
-💬 Contact form that opens Telegram with a pre-filled message
+💬 Booking modal with a contact form that opens Telegram with a pre-filled message (or Viber + clipboard fallback)
 
 📍 Google Maps integration
 
@@ -64,20 +64,6 @@ Scalability for multiple clinic branches
 Performance optimization via lightweight stack
 
 The architecture allows easy expansion: additional branches, doctors, pricing sections, or backend integration can be added without refactoring the core structure.
-
-📈 Future Improvements
-
-Planned enhancements:
-
-Backend-powered appointment booking
-
-SEO optimization
-
-Analytics integration
-
-Advanced multi-branch management
-
-Admin dashboard
 
 👨‍💻 Author
 

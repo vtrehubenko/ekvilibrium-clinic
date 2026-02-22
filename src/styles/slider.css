@@ -179,3 +179,17 @@
     aspect-ratio: 4 / 3;
   }
 }
+
+
+/* UX: не выделяем текст/картинки при свайпе по галереям */
+.slider,
+.slider * ,
+.gallery,
+.gallery * {
+  user-select: none;
+  -webkit-user-select: none;
+}
+.gallery img,
+.slider img {
+  -webkit-user-drag: none;
+}
