@@ -30,7 +30,9 @@
 
         <div class="header__actions">
           <a class="btn btn--ghost" href="/">На головну</a>
-          <a class="btn" href="/#contacts">Записатися</a>
+          <button class="btn" type="button" data-open-booking>
+            Записатися
+          </button>
           <button class="burger" data-burger aria-label="Menu">☰</button>
         </div>
       </div>
@@ -84,7 +86,9 @@
           <div class="price-table" id="therapy">
             <div class="price-head">
               <h3>Терапія</h3>
-              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+              <button class="btn" type="button" data-open-booking>
+                Записатися
+              </button>
             </div>
             <div class="price-row">
               <span>Консультація</span><b>від 500 грн</b>
@@ -95,7 +99,9 @@
           <div class="price-table" id="ortho">
             <div class="price-head">
               <h3>Ортодонтія</h3>
-              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+              <button class="btn" type="button" data-open-booking>
+                Записатися
+              </button>
             </div>
             <div class="price-row">
               <span>Діагностика</span><b>від 800 грн</b>
@@ -106,7 +112,9 @@
           <div class="price-table" id="prosthetics">
             <div class="price-head">
               <h3>Ортопедія</h3>
-              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+              <button class="btn" type="button" data-open-booking>
+                Записатися
+              </button>
             </div>
             <div class="price-row"><span>Коронка</span><b>від … грн</b></div>
             <div class="price-row"><span>Вініри</span><b>від … грн</b></div>
@@ -115,7 +123,9 @@
           <div class="price-table" id="surgery">
             <div class="price-head">
               <h3>Хірургія</h3>
-              <a class="btn btn--ghost" href="/#contacts">Записатися</a>
+              <button class="btn" type="button" data-open-booking>
+                Записатися
+              </button>
             </div>
             <div class="price-row"><span>Видалення</span><b>від … грн</b></div>
             <div class="price-row">
@@ -135,7 +145,131 @@
         <p class="muted">© EKvilibrium Clinic</p>
       </div>
     </footer>
+    <div class="modal" data-modal aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal></div>
 
+      <div
+        class="modal__card"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Записатися"
+      >
+        <div class="modal__top">
+          <div>
+            <div class="modal__title">Записатися на консультацію</div>
+            <div class="modal__sub muted">
+              <span data-modal-clinic>Одеса</span> •
+              <span data-modal-address>Люстдорфська дорога 55М</span>
+            </div>
+          </div>
+
+          <button
+            class="icon-btn"
+            type="button"
+            data-close-modal
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <form class="contact-form" data-contact-form>
+          <div class="contact-form__row">
+            <label class="field">
+              <span class="field__label">Імʼя</span>
+              <input
+                class="field__input"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="Як до вас звертатися?"
+              />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Телефон</span>
+              <input
+                class="field__input"
+                name="phone"
+                autocomplete="tel"
+                required
+                placeholder="+380…"
+              />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Коментар (необовʼязково)</span>
+            <textarea
+              class="field__input field__textarea"
+              name="msg"
+              rows="3"
+              placeholder="Наприклад: хочу гігієну / турбує зуб…"
+            ></textarea>
+          </label>
+
+          <div class="contact-form__channels">
+            <button
+              class="chip is-active"
+              type="button"
+              data-channel="telegram"
+            >
+              Telegram
+            </button>
+            <button class="chip" type="button" data-channel="viber">
+              Viber
+            </button>
+            <span class="muted" data-send-hint
+              >Telegram: відкриємо чат з готовим повідомленням.</span
+            >
+          </div>
+
+          <div class="contact-form__actions">
+            <button class="btn btn--primary" type="submit">Надіслати</button>
+            <span class="muted small"
+              >Ми не зберігаємо дані — лише відкриваємо месенджер з готовим
+              текстом.</span
+            >
+          </div>
+        </form>
+
+        <div class="modal__note muted">
+          Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
+          запитання.
+        </div>
+
+        <div class="modal__grid">
+          <a
+            class="modal__action modal__action--phone"
+            data-phone
+            href="tel:+380XXXXXXXXX"
+          >
+            <div class="modal__actionTitle">Подзвонити</div>
+            <div class="muted">Найшвидший спосіб</div>
+          </a>
+
+          <a
+            class="modal__action modal__action--tg"
+            data-tg
+            href="https://t.me/USERNAME"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="modal__actionTitle">Telegram</div>
+            <div class="muted">Написати в чат</div>
+          </a>
+
+          <a
+            class="modal__action modal__action--viber"
+            data-viber
+            href="viber://chat?number=%2B380XXXXXXXXX"
+          >
+            <div class="modal__actionTitle">Viber</div>
+            <div class="muted">Написати у Viber</div>
+          </a>
+        </div>
+      </div>
+      <div class="toast" data-toast role="status" aria-live="polite"></div>
+    </div>
     <script type="module" src="/src/services.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@ import { initContactForm } from "./js/contact.js";
 import { initBookingModal } from "./js/modal.js";
 import { initHeroAnimation } from "./js/hero-animation.js";
 import { initClinicGallery } from "./js/clinic-gallery.js";
+import { initDoctorsModal } from "./js/doctors-modal.js";
 
 initNav();
 initReveal();
@@ -17,3 +18,4 @@ initContactForm();
 initBookingModal();
 initHeroAnimation();
 initClinicGallery();
+initDoctorsModal();

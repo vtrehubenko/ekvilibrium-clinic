@@ -67,7 +67,6 @@
         </div>
 
         <nav class="nav" data-nav>
-          <a href="/services.html">Послуги</a>
           <a href="/services.html">Ціни</a>
           <a href="#doctors">Наші лікарі</a>
           <a href="#clinicGallery">Галерея</a>
@@ -75,8 +74,12 @@
         </nav>
 
         <div class="header__actions">
-          <a class="btn btn--ghost" data-phone href="tel:+380506820169">+380506820169</a>
-          <button class="btn" type="button" data-open-booking>Записатися</button>
+          <a class="btn btn--ghost" data-phone href="tel:+380506820169"
+            >+380506820169</a
+          >
+          <button class="btn" type="button" data-open-booking>
+            Записатися
+          </button>
           <button class="burger" data-burger aria-label="Menu">☰</button>
         </div>
       </div>
@@ -297,12 +300,13 @@
             <!-- CARD 1 -->
             <article
               class="doctor"
+              tabindex="0"
+              role="button"
               data-doctor
               data-name="Єкатерина А."
               data-role="Стоматолог"
               data-exp="Професійний підхід"
-              data-about="Працює акуратно, приділяє увагу діагностиці та профілактиці. Пояснює рекомендації простими словами."
-              data-tags="Терапія,Гігієна,Профілактика"
+              data-quote="Працюю делікатно та пояснюю кожен етап лікування."
               data-img="/img/doctors/ekaterina.png"
             >
               <div class="doctor__media">
@@ -321,12 +325,13 @@
             <!-- CARD 2 -->
             <article
               class="doctor"
+              tabindex="0"
+              role="button"
               data-doctor
               data-name="Ольга (Клініка)"
               data-role="Асистент / Адміністратор"
               data-exp="Організація прийому"
-              data-about="Координує запис, підказує по підготовці до візиту, допомагає обрати зручний час та клініку."
-              data-tags="Запис,Комунікація,Супровід"
+              data-quote="Працюю делікатно та пояснюю кожен етап лікування."
               data-img="/img/doctors/olga_i.png"
             >
               <div class="doctor__media">
@@ -345,12 +350,13 @@
             <!-- CARD 3 -->
             <article
               class="doctor"
+              tabindex="0"
+              role="button"
               data-doctor
               data-name="Асмолова"
               data-role="Стоматолог / Ортодонтія"
               data-exp="8+ років досвіду"
-              data-about="Ортодонтичні консультації, планування лікування, ведення пацієнтів. Пояснює варіанти та бюджет прозоро."
-              data-tags="Ортодонтія,План лікування,Діагностика"
+              data-quote="Працюю делікатно та пояснюю кожен етап лікування."
               data-img="/img/doctors/asmolova.png"
             >
               <div class="doctor__media">
@@ -369,12 +375,13 @@
             <!-- CARD 4 -->
             <article
               class="doctor"
+              tabindex="0"
+              role="button"
               data-doctor
               data-name="Ольга"
               data-role="Лікар-стоматолог"
               data-exp="10+ років досвіду"
-              data-about="Працює делікатно та уважно, підбирає індивідуальний план лікування. Консультація з поясненням кожного етапу."
-              data-tags="Терапія,Профілактика,Консультації"
+              data-quote="Працюю делікатно та пояснюю кожен етап лікування."
               data-img="/img/doctors/olga_o.png"
             >
               <div class="doctor__media">
@@ -421,16 +428,20 @@
               <div class="modal__title" data-modal-name>—</div>
               <div class="modal__meta muted" data-modal-role>—</div>
               <div class="modal__pill" data-modal-exp>—</div>
-
+              <div class="modal__quote" data-modal-quote></div>
               <p class="modal__about" data-modal-about></p>
 
               <div class="modal__tags" data-modal-tags></div>
 
               <div class="modal__actions">
-                <button class="btn" type="button" data-open-booking data-close-doctor>Записатися</button>
-                <a class="btn btn--ghost" href="#services" data-close-doctor
-                  >Послуги</a
+                <button
+                  class="btn"
+                  type="button"
+                  data-open-booking
+                  data-close-doctor
                 >
+                  Записатися
+                </button>
               </div>
             </div>
           </div>
@@ -483,7 +494,9 @@
                   <span class="contact-ico" aria-hidden="true">📍</span>
                   <div>
                     <div class="contact-label">Адреса</div>
-                    <div class="contact-value" data-address>Люстдорфська дорога 55М, Одеса</div>
+                    <div class="contact-value" data-address>
+                      Люстдорфська дорога 55М, Одеса
+                    </div>
                   </div>
                 </div>
 
@@ -491,7 +504,12 @@
                   <span class="contact-ico" aria-hidden="true">📞</span>
                   <div>
                     <div class="contact-label">Телефон</div>
-                    <a class="contact-value link" data-phone href="tel:+380506820169">+380506820169</a>
+                    <a
+                      class="contact-value link"
+                      data-phone
+                      href="tel:+380506820169"
+                      >+380506820169</a
+                    >
                   </div>
                 </div>
 
@@ -499,7 +517,9 @@
                   <span class="contact-ico" aria-hidden="true">🕘</span>
                   <div>
                     <div class="contact-label">Графік</div>
-                    <div class="contact-value" data-hours>Пн–Сб 10:00–19:00</div>
+                    <div class="contact-value" data-hours>
+                      Пн–Сб 10:00–19:00
+                    </div>
                   </div>
                 </div>
               </div>
@@ -511,7 +531,7 @@
               <p class="muted contact-note">
                 Ми підтвердимо запис протягом 15 хвилин у робочий час.
               </p>
-</div>
+            </div>
 
             <div class="map">
               <iframe
@@ -561,6 +581,70 @@
             ✕
           </button>
         </div>
+        <form class="contact-form" data-contact-form>
+          <div class="contact-form__row">
+            <label class="field">
+              <span class="field__label">Імʼя</span>
+              <input
+                class="field__input"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="Як до вас звертатися?"
+              />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Телефон</span>
+              <input
+                class="field__input"
+                name="phone"
+                autocomplete="tel"
+                required
+                placeholder="+380…"
+              />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Коментар (необовʼязково)</span>
+            <textarea
+              class="field__input field__textarea"
+              name="msg"
+              rows="3"
+              placeholder="Наприклад: хочу гігієну / турбує зуб…"
+            ></textarea>
+          </label>
+
+          <div class="contact-form__channels">
+            <button
+              class="chip is-active"
+              type="button"
+              data-channel="telegram"
+            >
+              Telegram
+            </button>
+            <button class="chip" type="button" data-channel="viber">
+              Viber
+            </button>
+            <span class="muted" data-send-hint
+              >Telegram: відкриємо чат з готовим повідомленням.</span
+            >
+          </div>
+
+          <div class="contact-form__actions">
+            <button class="btn btn--primary" type="submit">Надіслати</button>
+            <span class="muted small"
+              >Ми не зберігаємо дані — лише відкриваємо месенджер з готовим
+              текстом.</span
+            >
+          </div>
+        </form>
+
+        <div class="modal__note muted">
+          Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
+          запитання.
+        </div>
 
         <div class="modal__grid">
           <a
@@ -592,47 +676,8 @@
             <div class="muted">Написати у Viber</div>
           </a>
         </div>
-
-        <div class="modal__note muted">
-          Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
-          запитання.
-        </div>
-      <div class="modal__note muted">
-          Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
-          запитання.
-        </div>
-      
-        <form class="contact-form" data-contact-form>
-          <div class="contact-form__row">
-            <label class="field">
-              <span class="field__label">Імʼя</span>
-              <input class="field__input" name="name" autocomplete="name" required placeholder="Як до вас звертатися?" />
-            </label>
-
-            <label class="field">
-              <span class="field__label">Телефон</span>
-              <input class="field__input" name="phone" autocomplete="tel" required placeholder="+380…" />
-            </label>
-          </div>
-
-          <label class="field">
-            <span class="field__label">Коментар (необовʼязково)</span>
-            <textarea class="field__input field__textarea" name="msg" rows="3" placeholder="Наприклад: хочу гігієну / турбує зуб…"></textarea>
-          </label>
-
-          <div class="contact-form__channels">
-            <button class="chip is-active" type="button" data-channel="telegram">Telegram</button>
-            <button class="chip" type="button" data-channel="viber">Viber</button>
-            <span class="muted" data-send-hint>Telegram: відкриємо чат з готовим повідомленням.</span>
-          </div>
-
-          <div class="contact-form__actions">
-            <button class="btn btn--primary" type="submit">Надіслати</button>
-            <span class="muted small">Ми не зберігаємо дані — лише відкриваємо месенджер з готовим текстом.</span>
-          </div>
-        </form>
-</div>
-        <div class="toast" data-toast role="status" aria-live="polite"></div>
-</div>
+      </div>
+      <div class="toast" data-toast role="status" aria-live="polite"></div>
+    </div>
   </body>
 </html>
