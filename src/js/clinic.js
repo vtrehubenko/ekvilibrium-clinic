@@ -3,7 +3,7 @@ const STORAGE_KEY = "ek_selected_clinic";
 const CLINICS = {
   lustdorf: {
     key: "lustdorf",
-    label: "Одеса",
+    label: "Люстдорфська Дорога",
     address: "Люстдорфська дорога 55М, Одеса",
     hours: "Пн–Сб 10:00–19:00",
     phone: "+380506820169",
@@ -14,7 +14,7 @@ const CLINICS = {
   },
   bazar: {
     key: "bazar",
-    label: "Одеса",
+    label: "Базарна",
     address: "Базарна 26, Одеса",
     hours: "Пн–Сб 10:00–19:00",
     phone: "+380506820169",
@@ -26,11 +26,8 @@ const CLINICS = {
 };
 
 export function initClinicDropdown() {
-  const root = document.querySelector("[data-clinic]");
-  const btn = document.querySelector("[data-clinic-btn]");
-  const menu = document.querySelector("[data-clinic-menu]");
-  const currentEl = document.querySelector("[data-clinic-current]");
-  const items = Array.from(document.querySelectorAll("[data-clinic-item]"));
+  const roots = Array.from(document.querySelectorAll("[data-clinic]"));
+  if (!roots.length) return;
 
   const addressEl = document.querySelector("[data-address]");
   const hoursEl = document.querySelector("[data-hours]");
@@ -42,92 +39,92 @@ export function initClinicDropdown() {
   const mapIframe = document.querySelector("[data-map-iframe]");
   const heroCityEl = document.querySelector("[data-hero-city]");
 
-  if (!btn || !menu || !currentEl || items.length === 0) return;
+  const modalClinicEl = document.querySelector("[data-modal-clinic]");
+  const modalAddressEl = document.querySelector("[data-modal-address]");
 
-  const wrapper = root || btn.closest(".clinic") || btn.parentElement;
-
-  function openMenu() {
-    wrapper.classList.add("is-open");
-    btn.setAttribute("aria-expanded", "true");
-  }
-
-  function closeMenu() {
-    wrapper.classList.remove("is-open");
-    btn.setAttribute("aria-expanded", "false");
-  }
-
-  function toggleMenu(e) {
-    e?.stopPropagation();
-    wrapper.classList.contains("is-open") ? closeMenu() : openMenu();
-  }
-
-  function setActiveClinic(key) {
-    const clinic = CLINICS[key] || CLINICS.lustdorf;
-
-    currentEl.textContent = clinic.label;
-
-    items.forEach((it) => {
-      it.classList.toggle("is-active", it.dataset.clinicItem === clinic.key);
+  function closeAll(exceptRoot = null) {
+    roots.forEach((r) => {
+      if (exceptRoot && r === exceptRoot) return;
+      const b = r.querySelector("[data-clinic-btn]");
+      const m = r.querySelector("[data-clinic-menu]");
+      if (m) m.style.display = "none";
+      if (b) b.setAttribute("aria-expanded", "false");
     });
+  }
+
+  function applyClinic(clinicKey) {
+    const clinic = CLINICS[clinicKey];
+    if (!clinic) return;
 
     if (addressEl) addressEl.textContent = clinic.address;
     if (hoursEl) hoursEl.textContent = clinic.hours;
+    if (heroCityEl) heroCityEl.textContent = clinic.heroCity;
 
-    if (phoneBtns.length) {
-      phoneBtns.forEach((el) => {
-        el.href = `tel:${clinic.phone}`;
-        el.textContent = clinic.phone;
-      });
-    }
+    if (modalClinicEl) modalClinicEl.textContent = "Одеса";
+    if (modalAddressEl) modalAddressEl.textContent = clinic.address;
 
-    if (tgBtns.length) {
-      tgBtns.forEach((el) => {
-        el.href = `https://t.me/${clinic.telegram}`;
-      });
-    }
+    roots.forEach((r) => {
+      const currentEl = r.querySelector("[data-clinic-current]");
+      if (currentEl) currentEl.textContent = clinic.label;
+    });
 
-    if (viberBtns.length) {
-      const enc = encodeURIComponent(clinic.viber);
-      viberBtns.forEach((el) => {
-        el.href = `viber://chat?number=${enc}`;
-      });
-    }
+    phoneBtns.forEach((a) => {
+      a.href = `tel:${clinic.phone}`;
 
-    if (mapIframe && clinic.mapAddress) {
+      if (a.tagName === "A" && a.textContent.trim().startsWith("+")) {
+        a.textContent = clinic.phone;
+      }
+    });
+
+    tgBtns.forEach((a) => {
+      a.href = `https://t.me/${clinic.telegram}`;
+    });
+
+    viberBtns.forEach((a) => {
+      const n = clinic.viber.replace("+", "");
+      a.href = `viber://chat?number=%2B${n}`;
+    });
+
+    if (mapIframe) {
       const q = encodeURIComponent(clinic.mapAddress);
       mapIframe.src = `https://www.google.com/maps?q=${q}&output=embed`;
     }
 
-    if (heroCityEl && clinic.heroCity) heroCityEl.textContent = clinic.heroCity;
-
-    try {
-      localStorage.setItem(STORAGE_KEY, clinic.key);
-    } catch (_) {}
-    window.dispatchEvent(
-      new CustomEvent("clinic:change", { detail: { key: clinic.key } }),
-    );
+    localStorage.setItem(STORAGE_KEY, clinicKey);
   }
 
-  const saved = safeGet(STORAGE_KEY);
-  setActiveClinic(saved && CLINICS[saved] ? saved : "lustdorf");
+  const saved = localStorage.getItem("ek_selected_clinic");
+  const initialKey = saved && CLINICS[saved] ? saved : "lustdorf";
+  applyClinic(initialKey);
 
-  btn.addEventListener("click", toggleMenu);
+  roots.forEach((root) => {
+    const btn = root.querySelector("[data-clinic-btn]");
+    const menu = root.querySelector("[data-clinic-menu]");
+    const items = Array.from(root.querySelectorAll("[data-clinic-item]"));
 
-  items.forEach((it) => {
-    it.addEventListener("click", (e) => {
+    if (!btn || !menu) return;
+
+    menu.style.display = "none";
+
+    btn.addEventListener("click", (e) => {
       e.stopPropagation();
-      setActiveClinic(it.dataset.clinicItem);
-      closeMenu();
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      closeAll(root);
+      btn.setAttribute("aria-expanded", String(!expanded));
+      menu.style.display = expanded ? "none" : "block";
+    });
+
+    items.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const key = item.getAttribute("data-clinic-item");
+        applyClinic(key);
+        closeAll();
+      });
     });
   });
 
-  document.addEventListener("click", (e) => {
-    if (!wrapper.contains(e.target)) closeMenu();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
+  document.addEventListener("click", () => closeAll());
 }
 
 function safeGet(key) {

@@ -9,14 +9,12 @@ export function initBookingModal() {
   const addrEl = modal.querySelector("[data-modal-address]");
 
   function open() {
-    const clinicCurrent = document
-      .querySelector("[data-clinic-current]")
-      ?.textContent?.trim();
+    if (clinicEl) clinicEl.textContent = "Одеса";
+
     const address = document
       .querySelector("[data-address]")
       ?.textContent?.trim();
 
-    if (clinicEl && clinicCurrent) clinicEl.textContent = clinicCurrent;
     if (addrEl && address) addrEl.textContent = address;
 
     modal.classList.add("is-open");
