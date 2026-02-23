@@ -9,6 +9,7 @@ import { initBookingModal } from "./js/modal.js";
 import { initHeroAnimation } from "./js/hero-animation.js";
 import { initClinicGallery } from "./js/clinic-gallery.js";
 import { initDoctorsModal } from "./js/doctors-modal.js";
+import { initFaq } from "./js/faq.js";
 
 initNav();
 initReveal();
@@ -19,3 +20,4 @@ initBookingModal();
 initHeroAnimation();
 initClinicGallery();
 initDoctorsModal();
+initFaq();

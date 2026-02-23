@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EKvilibrium Clinic — стоматологія в Одесі</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <body>
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <div class="brand">
+          <img
+            class="brand__logo"
+            src="/public/img/assets/EK-logo.svg"
+            alt="EK"
+          />
+
+          <div class="brand__info">
+            <span class="brand__name">EKvilibrium Clinic</span>
+
+            <div class="clinic" data-clinic>
+              <button
+                class="clinic__btn"
+                type="button"
+                data-clinic-btn
+                aria-expanded="false"
+              >
+                <span class="clinic__current" data-clinic-current
+                  >Люстдорфська дорога</span
+                >
+                <span class="clinic__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div
+                class="clinic__menu"
+                data-clinic-menu
+                role="menu"
+                aria-label="Вибір клініки"
+              >
+                <button
+                  class="clinic__item"
+                  type="button"
+                  role="menuitem"
+                  data-clinic-item="lustdorf"
+                >
+                  Люстдорфська дорога 55М
+                </button>
+                <button
+                  class="clinic__item"
+                  type="button"
+                  role="menuitem"
+                  data-clinic-item="bazar"
+                >
+                  Базарна 26
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav" data-nav>
+          <a href="/services.html">Ціни</a>
+          <a href="#doctors">Наші лікарі</a>
+          <a href="#clinicGallery">Галерея</a>
+          <a href="#contacts">Контакти</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="btn btn--ghost" href="/">На головну</a>
+          <button class="btn" type="button" data-open-booking>
+            Записатися
+          </button>
+          <button class="burger" data-burger aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section faq" id="faq">
+        <div class="container">
+          <h1 class="section__title">Питання та відповіді</h1>
+          <p class="muted">
+            Зібрали найпоширеніші запитання, щоб вам було спокійніше перед
+            візитом.
+          </p>
+
+          <div class="faq__list" data-faq>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q">Чи буде боляче?</span>
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  Ми робимо все можливе, щоб лікування було максимально
+                  комфортним і безболісним. Використовуємо сучасні анестетики,
+                  які швидко діють і повністю блокують біль. Перед процедурою
+                  лікар обов’язково уточнює ваші відчуття та страхи. Якщо ви
+                  хвилюєтесь — ми пояснимо кожен етап і будемо працювати в
+                  комфортному для вас темпі.
+                </div>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q">Чи є розстрочка?</span>
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  Наразі розстрочка в клініці не передбачена. Ми завжди
+                  попередньо узгоджуємо повну вартість лікування та складаємо
+                  детальний план, щоб ви могли спокійно прийняти рішення без
+                  несподіваних витрат.
+                </div>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q">Чи є приховані платежі?</span>
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  Ні, у нашій клініці діє принцип повної прозорості розрахунків.
+                  Усі ціни є відкритими та узгоджуються з пацієнтом до початку
+                  лікування. У разі необхідності додаткових процедур лікар
+                  попередньо інформує вас, пояснює доцільність змін у плані
+                  лікування та погоджує оновлену вартість. Жодні додаткові
+                  нарахування не здійснюються без вашого відома.
+                </div>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q">Який досвід у лікаря?</span>
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  У нашій клініці працюють лікарі з багаторічним досвідом
+                  практики. Кожен спеціаліст регулярно підвищує кваліфікацію та
+                  працює за сучасними протоколами лікування. Ми обираємо лікарів
+                  не лише за професійними навичками, а й за уважним ставленням
+                  до пацієнтів.
+                </div>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q"
+                  >Чи є сертифікати та додаткове навчання?</span
+                >
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  Так, наші лікарі постійно проходять додаткове навчання, беруть
+                  участь у професійних семінарах та міжнародних конференціях.
+                  Усі сертифікати доступні для ознайомлення в клініці або під
+                  час консультації.
+                </div>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q">Чи є якісь привілеї військовим?</span>
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  Так. Для військовослужбовців лікування в нашій клініці є
+                  безкоштовним. Ми щиро вдячні за вашу службу та вважаємо
+                  підтримку захисників нашим обов’язком.
+                </div>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q">Чи стерильні інструменти?</span>
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  Безпека пацієнтів - наш пріоритет. Усі інструменти проходять
+                  повний цикл стерилізації відповідно до медичних стандартів. Ми
+                  використовуємо одноразові матеріали там, де це передбачено
+                  протоколом, і суворо контролюємо стерильність обладнання.
+                </div>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button
+                class="faq__btn"
+                type="button"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="faq__q"
+                  >Чи можна зробити перерву під час процедури?</span
+                >
+                <span class="faq__chev" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__panel" data-faq-panel aria-hidden="true">
+                <div class="faq__a">
+                  Звичайно. Ви можете в будь-який момент попросити паузу. Ми
+                  працюємо у комфортному для вас темпі, а ваше самопочуття для
+                  нас завжди на першому місці.
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section certs" id="certs">
+        <div class="container">
+          <div class="certs__head">
+            <h2 class="section__title">Сертифікати</h2>
+            <p class="muted">
+              Підтвердження навчання та підвищення кваліфікації наших лікарів.
+            </p>
+          </div>
+
+          <div class="certs__slider" data-certs>
+            <button
+              class="certs__nav certs__nav--prev"
+              type="button"
+              data-certs-prev
+              aria-label="Попередній сертифікат"
+            >
+              ‹
+            </button>
+
+            <div class="certs__viewport" data-certs-viewport>
+              <div class="certs__track" data-certs-track>
+                <!-- СЛАЙД 1 -->
+                <figure class="certs__slide">
+                  <img
+                    class="certs__img"
+                    src="/img/certificates/cert-1.jpg"
+                    alt="Сертифікат 1"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <!-- СЛАЙД 2 -->
+                <figure class="certs__slide">
+                  <img
+                    class="certs__img"
+                    src="/img/certificates/cert-2.jpg"
+                    alt="Сертифікат 2"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <!-- СЛАЙД 3 -->
+                <figure class="certs__slide">
+                  <img
+                    class="certs__img"
+                    src="/img/certificates/cert-3.jpg"
+                    alt="Сертифікат 3"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <!-- Добавляй сколько нужно -->
+              </div>
+            </div>
+
+            <button
+              class="certs__nav certs__nav--next"
+              type="button"
+              data-certs-next
+              aria-label="Наступний сертифікат"
+            >
+              ›
+            </button>
+          </div>
+
+          <div
+            class="certs__dots"
+            data-certs-dots
+            aria-label="Навігація по сертифікатах"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="muted">© EKvilibrium Clinic</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <div class="modal" data-modal aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal></div>
+
+      <div
+        class="modal__card"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Записатися"
+      >
+        <div class="modal__top">
+          <div>
+            <div class="modal__title">Записатися на консультацію</div>
+            <div class="modal__sub muted modal__sub--booking">
+              <span data-modal-clinic>Одеса</span>
+              <span class="modal__dot" aria-hidden="true">·</span>
+
+              <div
+                class="clinic clinic--inline"
+                data-clinic
+                data-clinic-scope="booking"
+              >
+                <button
+                  class="clinic__btn"
+                  type="button"
+                  data-clinic-btn
+                  aria-expanded="false"
+                >
+                  <span class="clinic__current" data-clinic-current
+                    >Базарна</span
+                  >
+                  <span class="clinic__chev" aria-hidden="true">▾</span>
+                </button>
+
+                <div
+                  class="clinic__menu"
+                  data-clinic-menu
+                  role="menu"
+                  aria-label="Вибір клініки"
+                >
+                  <button
+                    class="clinic__item"
+                    type="button"
+                    role="menuitem"
+                    data-clinic-item="lustdorf"
+                  >
+                    Люстдорфська дорога 55М
+                  </button>
+                  <button
+                    class="clinic__item"
+                    type="button"
+                    role="menuitem"
+                    data-clinic-item="bazar"
+                  >
+                    Базарна 26
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="icon-btn"
+            type="button"
+            data-close-modal
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <form class="contact-form" data-contact-form>
+          <div class="contact-form__row">
+            <label class="field">
+              <span class="field__label">Імʼя</span>
+              <input
+                class="field__input"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="Як до вас звертатися?"
+              />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Телефон</span>
+              <input
+                class="field__input"
+                name="phone"
+                autocomplete="tel"
+                required
+                placeholder="+380…"
+              />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Коментар (необовʼязково)</span>
+            <textarea
+              class="field__input field__textarea"
+              name="msg"
+              rows="3"
+              placeholder="Наприклад: хочу гігієну / турбує зуб…"
+            ></textarea>
+          </label>
+
+          <div class="contact-form__channels">
+            <button
+              class="chip is-active"
+              type="button"
+              data-channel="telegram"
+            >
+              Telegram
+            </button>
+            <button class="chip" type="button" data-channel="viber">
+              Viber
+            </button>
+            <span class="muted" data-send-hint
+              >Telegram: відкриємо чат з готовим повідомленням.</span
+            >
+          </div>
+
+          <div class="contact-form__actions">
+            <button class="btn btn--primary" type="submit">Надіслати</button>
+            <span class="muted small"
+              >Ми не зберігаємо дані — лише відкриваємо месенджер з готовим
+              текстом.</span
+            >
+          </div>
+        </form>
+
+        <div class="modal__note muted">
+          Оберіть зручний спосіб звʼязку — ми підтвердимо запис і відповімо на
+          запитання.
+        </div>
+
+        <div class="modal__grid">
+          <a
+            class="modal__action modal__action--phone"
+            data-phone
+            href="tel:+380XXXXXXXXX"
+          >
+            <div class="modal__actionTitle">Подзвонити</div>
+            <div class="muted">Найшвидший спосіб</div>
+          </a>
+
+          <a
+            class="modal__action modal__action--tg"
+            data-tg
+            href="https://t.me/USERNAME"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="modal__actionTitle">Telegram</div>
+            <div class="muted">Написати в чат</div>
+          </a>
+
+          <a
+            class="modal__action modal__action--viber"
+            data-viber
+            href="viber://chat?number=%2B380XXXXXXXXX"
+          >
+            <div class="modal__actionTitle">Viber</div>
+            <div class="muted">Написати у Viber</div>
+          </a>
+        </div>
+      </div>
+      <div class="toast" data-toast role="status" aria-live="polite"></div>
+    </div>
+  </body>
+</html>
