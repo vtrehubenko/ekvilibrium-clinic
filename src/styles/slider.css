@@ -95,6 +95,10 @@
   transition: transform 360ms ease;
   will-change: transform;
 }
+.gallery__track img {
+  flex: 0 0 100%;
+  width: 100%;
+}
 
 .gallery__slide {
   min-width: 100%;
@@ -180,10 +184,9 @@
   }
 }
 
-
 /* UX: не выделяем текст/картинки при свайпе по галереям */
 .slider,
-.slider * ,
+.slider *,
 .gallery,
 .gallery * {
   user-select: none;

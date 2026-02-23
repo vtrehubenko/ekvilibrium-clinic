@@ -10,6 +10,7 @@ import { initHeroAnimation } from "./js/hero-animation.js";
 import { initClinicGallery } from "./js/clinic-gallery.js";
 import { initDoctorsModal } from "./js/doctors-modal.js";
 import { initFaq } from "./js/faq.js";
+import { initCertsCarousel } from "./js/certs.js";
 
 initNav();
 initReveal();
@@ -21,3 +22,4 @@ initHeroAnimation();
 initClinicGallery();
 initDoctorsModal();
 initFaq();
+initCertsCarousel();

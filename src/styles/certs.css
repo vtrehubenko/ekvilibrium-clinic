@@ -1,0 +1,94 @@
+.certs__head {
+  margin-bottom: 14px;
+}
+
+.certs__slider {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+}
+
+.certs__viewport {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.certs__track {
+  display: flex;
+  gap: 12px;
+  will-change: transform;
+  transform: translateX(0px);
+  transition: transform 0.28s ease;
+  user-select: none;
+}
+
+.certs__slide {
+  flex: 0 0 auto;
+  width: min(420px, 78vw);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(11, 18, 32, 0.06);
+  margin: 0;
+}
+
+.certs__img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  -webkit-user-drag: none;
+}
+
+.certs__nav {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(11, 18, 32, 0.08);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.certs__nav:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.certs__dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.certs__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: rgba(26, 166, 255, 0.12);
+  cursor: pointer;
+}
+
+.certs__dot.is-active {
+  width: 18px;
+}
+
+/* адаптив */
+@media (max-width: 520px) {
+  .certs__slider {
+    grid-template-columns: 1fr;
+  }
+  .certs__nav {
+    display: none; /* на мобилке свайпом, кнопки можно скрыть */
+  }
+  .certs__img {
+    height: 220px;
+  }
+}
