@@ -11,6 +11,7 @@ import { initClinicGallery } from "./js/clinic-gallery.js";
 import { initDoctorsModal } from "./js/doctors-modal.js";
 import { initFaq } from "./js/faq.js";
 import { initCertsCarousel } from "./js/certs.js";
+import { initStoriesViewer } from "./js/stories/stories-viewer.js";
 
 initNav();
 initReveal();
@@ -23,3 +24,6 @@ initClinicGallery();
 initDoctorsModal();
 initFaq();
 initCertsCarousel();
+initStoriesViewer({
+  mountSelector: "[data-stories]",
+});

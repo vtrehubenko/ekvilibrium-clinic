@@ -17,53 +17,13 @@
     <header class="header" id="top">
       <div class="container header__inner">
         <div class="brand">
-          <img
-            class="brand__logo"
-            src="/public/img/assets/EK-logo.svg"
-            alt="EK"
-          />
-
-          <div class="brand__info">
-            <span class="brand__name">EKvilibrium Clinic</span>
-
-            <div class="clinic" data-clinic>
-              <button
-                class="clinic__btn"
-                type="button"
-                data-clinic-btn
-                aria-expanded="false"
-              >
-                <span class="clinic__current" data-clinic-current
-                  >Люстдорфська дорога</span
-                >
-                <span class="clinic__chev" aria-hidden="true">▾</span>
-              </button>
-
-              <div
-                class="clinic__menu"
-                data-clinic-menu
-                role="menu"
-                aria-label="Вибір клініки"
-              >
-                <button
-                  class="clinic__item"
-                  type="button"
-                  role="menuitem"
-                  data-clinic-item="lustdorf"
-                >
-                  Люстдорфська дорога 55М
-                </button>
-                <button
-                  class="clinic__item"
-                  type="button"
-                  role="menuitem"
-                  data-clinic-item="bazar"
-                >
-                  Базарна 26
-                </button>
-              </div>
+          <a class="brand" href="/">
+            <img class="brand__logo" src="/img/assets/EK-logo.svg" alt="EK" />
+            <div class="brand__info">
+              <span class="brand__name">EKvilibrium Clinic</span>
+              <span class="muted" style="font-size: 12px">Часті запитання</span>
             </div>
-          </div>
+          </a>
         </div>
 
         <nav class="nav" data-nav>
@@ -356,12 +316,6 @@
                 <span class="trust__stars" aria-hidden="true">★★★★★</span>
                 <span class="trust__ratingText">Відгуки в Google</span>
               </div>
-
-              <!-- optional: если хочешь показывать рейтинг -->
-              <!-- <div class="trust__score">
-          <span class="trust__scoreNum">4.9</span>
-          <span class="trust__scoreHint">/ 5</span>
-        </div> -->
             </div>
 
             <div class="trust__reviews">
@@ -417,7 +371,7 @@
           <div class="trust__card">
             <div class="trust__cardHead">
               <div class="trust__badge">
-                <span class="trust__igIcon" aria-hidden="true">◉</span>
+                <span class="trust__igIcon" aria-hidden="true">📷</span>
                 <span class="trust__ratingText">Відгуки в Instagram</span>
               </div>
             </div>
@@ -430,12 +384,13 @@
                 target="_blank"
                 rel="noopener"
               >
-                <span class="story__ring" aria-hidden="true"></span>
-                <img
-                  class="story__img"
-                  src="/img/stories/review-1.jpg"
-                  alt="Instagram highlights: Відгуки 1"
-                />
+                <span class="story__ring" aria-hidden="true"
+                  ><img
+                    class="story__img"
+                    src="/img/stories/review-1.png"
+                    alt="Instagram highlights: Відгуки 1"
+                /></span>
+
                 <span class="story__label">Відгуки</span>
               </a>
 
@@ -446,12 +401,13 @@
                 target="_blank"
                 rel="noopener"
               >
-                <span class="story__ring" aria-hidden="true"></span>
-                <img
-                  class="story__img"
-                  src="/img/stories/review-2.jpg"
-                  alt="Instagram highlights: Відгуки 2"
-                />
+                <span class="story__ring" aria-hidden="true"
+                  ><img
+                    class="story__img"
+                    src="/img/stories/review-2.png"
+                    alt="Instagram highlights: Відгуки 2"
+                /></span>
+
                 <span class="story__label">До/Після</span>
               </a>
 
@@ -462,12 +418,13 @@
                 target="_blank"
                 rel="noopener"
               >
-                <span class="story__ring" aria-hidden="true"></span>
-                <img
-                  class="story__img"
-                  src="/img/stories/review-3.jpg"
-                  alt="Instagram highlights: Команда"
-                />
+                <span class="story__ring" aria-hidden="true"
+                  ><img
+                    class="story__img"
+                    src="/img/stories/review-3.png"
+                    alt="Instagram highlights: Команда"
+                /></span>
+
                 <span class="story__label">Команда</span>
               </a>
             </div>
