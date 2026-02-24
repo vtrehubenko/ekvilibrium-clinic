@@ -1,8 +1,3 @@
-🦷 EKvilibrium Clinic — Commercial Website
-
-A modern commercial website developed for a real dental clinic.
-This is my first commercial frontend project, built with scalability, performance, and user experience in mind.
-
 🚀 Project Overview
 
 EKvilibrium Clinic is a responsive promotional website for a dental clinic, designed to:
@@ -20,17 +15,11 @@ The project is built without heavy frameworks, focusing on performance and clean
 ✨ Features
 
 🏥 Multi-clinic switcher (dropdown with state persistence via localStorage)
-
 📱 Quick contact buttons (Telegram / Viber / Phone)
-
 🖼 Custom-built image slider (Vanilla JS)
-
 💬 Booking modal with a contact form that opens Telegram with a pre-filled message (or Viber + clipboard fallback)
-
 📍 Google Maps integration
-
 🎨 Smooth hover animations and UI transitions
-
 📱 Fully responsive layout (mobile-first approach)
 
 🛠 Tech Stack
@@ -46,6 +35,15 @@ CSS Grid & Flexbox
 LocalStorage API
 
 No frameworks (React/Vue/etc.) were used — the project is built with clean, modular frontend architecture.
+
+📸 Current Project Status
+
+The project is currently awaiting final photo assets and visual materials from the client.
+
+All structural sections, UI components, and interactive logic are fully implemented.
+Once the client provides the official media assets (clinic interiors, doctors, before/after results, etc.), they will be integrated without requiring structural refactoring.
+
+The architecture was designed to allow seamless content updates and asset replacement.
 
 💼 Commercial Experience
 
