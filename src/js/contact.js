@@ -1,9 +1,8 @@
 const DEFAULT_CHANNEL = "telegram";
 
-function buildMessage({ name, phone, msg, clinicLabel, address }) {
+function buildMessage({ name, phone, msg, address }) {
   return (
     `Заявка з сайту EKvilibrium Clinic\n` +
-    `Клініка: ${clinicLabel}\n` +
     `Адреса: ${address}\n` +
     `Імʼя: ${name}\n` +
     `Телефон: ${phone}\n` +
@@ -44,11 +43,19 @@ export function initContactForm() {
 
   const hint = form.querySelector("[data-send-hint]");
   const chips = Array.from(form.querySelectorAll("[data-channel]"));
+  const modal = form.closest("[data-modal]") || document;
+  const clinicLabelEl = modal.querySelector(
+    '[data-clinic-scope="booking"] [data-clinic-current]',
+  );
+  const addressEl =
+    modal.querySelector("[data-modal-address]") ||
+    document.querySelector("[data-address]");
 
-  const clinicLabelEl = document.querySelector("[data-clinic-current]");
-  const addressEl = document.querySelector("[data-address]");
-  const tgLink = document.querySelector("[data-tg]");
-  const viberLink = document.querySelector("[data-viber]");
+  const tgLink =
+    modal.querySelector("[data-tg]") || document.querySelector("[data-tg]");
+  const viberLink =
+    modal.querySelector("[data-viber]") ||
+    document.querySelector("[data-viber]");
 
   let channel = DEFAULT_CHANNEL;
 
@@ -84,9 +91,8 @@ export function initContactForm() {
       return;
     }
 
-    const clinicLabel = clinicLabelEl?.textContent?.trim() || "—";
     const address = addressEl?.textContent?.trim() || "—";
-    const text = buildMessage({ name, phone, msg, clinicLabel, address });
+    const text = buildMessage({ name, phone, msg, address });
 
     if (channel === "telegram") {
       const href = tgLink?.getAttribute("href");

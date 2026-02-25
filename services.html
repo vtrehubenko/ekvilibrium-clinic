@@ -158,9 +158,56 @@
         <div class="modal__top">
           <div>
             <div class="modal__title">Записатися на консультацію</div>
-            <div class="modal__sub muted">
-              <span data-modal-clinic>Одеса</span> •
-              <span data-modal-address>Люстдорфська дорога 55М</span>
+            <div class="modal__sub muted modal__sub--booking">
+              <span data-modal-clinic>Одеса</span>
+              <span
+                class="muted"
+                data-modal-address
+                style="display: none"
+              ></span>
+              <span class="modal__dot" aria-hidden="true">·</span>
+
+              <div
+                class="clinic clinic--inline"
+                data-clinic
+                data-clinic-scope="booking"
+              >
+                <button
+                  class="clinic__btn"
+                  type="button"
+                  data-clinic-btn
+                  aria-expanded="false"
+                >
+                  <span class="clinic__current" data-clinic-current
+                    >Базарна</span
+                  >
+                  <span class="clinic__chev" aria-hidden="true">▾</span>
+                </button>
+
+                <div
+                  class="clinic__menu"
+                  data-clinic-menu
+                  role="menu"
+                  aria-label="Вибір клініки"
+                >
+                  <button
+                    class="clinic__item"
+                    type="button"
+                    role="menuitem"
+                    data-clinic-item="lustdorf"
+                  >
+                    Люстдорфська дорога 55М
+                  </button>
+                  <button
+                    class="clinic__item"
+                    type="button"
+                    role="menuitem"
+                    data-clinic-item="bazar"
+                  >
+                    Базарна 26
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -272,5 +319,6 @@
       <div class="toast" data-toast role="status" aria-live="polite"></div>
     </div>
     <script type="module" src="/src/services.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

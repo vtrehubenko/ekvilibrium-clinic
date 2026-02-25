@@ -30,7 +30,11 @@ const CLINICS = {
     viber: "+380506820169",
     mapAddress: "Базарна 26, Одеса",
     heroCity: "Одесі",
-    gallery: ["/img/clinics/bazar/cab1.jpg", "/img/clinics/bazar/lobby1.jpg"],
+    gallery: [
+      "/img/clinics/bazar/cab1.jpg",
+      "/img/clinics/bazar/lobby1.jpg",
+      "/img/clinics/bazar/lobby2.jpg",
+    ],
   },
 };
 
