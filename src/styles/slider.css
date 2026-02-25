@@ -184,7 +184,6 @@
   }
 }
 
-/* UX: не выделяем текст/картинки при свайпе по галереям */
 .slider,
 .slider *,
 .gallery,
@@ -195,4 +194,11 @@
 .gallery img,
 .slider img {
   -webkit-user-drag: none;
+}
+.slider,
+.slider__viewport,
+.gallery,
+.gallery__viewport,
+.certs__viewport {
+  touch-action: pan-y;
 }

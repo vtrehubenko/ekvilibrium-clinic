@@ -99,20 +99,26 @@ export function initCertsCarousel() {
   nextBtn?.addEventListener("click", () => goTo(index + 1));
 
   let startX = 0;
+  let lastX = 0;
   let dragging = false;
 
   viewport.addEventListener("pointerdown", (e) => {
     if (isAnimating) return;
     dragging = true;
-    startX = e.clientX;
+    startX = lastX = e.clientX;
     viewport.setPointerCapture(e.pointerId);
   });
 
-  viewport.addEventListener("pointerup", (e) => {
+  viewport.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    lastX = e.clientX;
+  });
+
+  viewport.addEventListener("pointerup", () => {
     if (!dragging) return;
     dragging = false;
 
-    const dx = e.clientX - startX;
+    const dx = lastX - startX;
     const threshold = 40;
 
     if (dx > threshold) goTo(index - 1);

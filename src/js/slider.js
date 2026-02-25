@@ -13,6 +13,7 @@ export function initSlider(rootSelector = "[data-slider]") {
     let index = 0;
 
     let startX = 0;
+    let lastX = 0;
     let isDragging = false;
 
     function updateDots() {
@@ -54,17 +55,27 @@ export function initSlider(rootSelector = "[data-slider]") {
 
     root.addEventListener("pointerdown", (e) => {
       isDragging = true;
-      startX = e.clientX;
+      startX = lastX = e.clientX;
       root.setPointerCapture(e.pointerId);
     });
 
-    root.addEventListener("pointerup", (e) => {
+    root.addEventListener("pointermove", (e) => {
+      if (!isDragging) return;
+      lastX = e.clientX;
+    });
+
+    root.addEventListener("pointerup", () => {
       if (!isDragging) return;
       isDragging = false;
-      const dx = e.clientX - startX;
+
+      const dx = lastX - startX;
       const threshold = 50;
       if (dx > threshold) goTo(index - 1);
       if (dx < -threshold) goTo(index + 1);
+    });
+
+    root.addEventListener("pointercancel", () => {
+      isDragging = false;
     });
 
     refresh();

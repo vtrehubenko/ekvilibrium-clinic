@@ -15,3 +15,25 @@
 @import "./pages/faq.css";
 @import "./certs.css";
 @import "./stories-viewer.css";
+
+/*for swiping on mobiles*/
+
+[data-gallery-viewport],
+[data-certs-viewport],
+[data-slider] {
+  touch-action: pan-y;
+}
+
+[data-gallery-viewport] {
+  overflow: hidden;
+}
+
+[data-gallery-track] {
+  display: flex;
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+
+.gallery__slide {
+  flex: 0 0 100%;
+}
