@@ -1,6 +1,6 @@
 const STORAGE_KEY = "ek_selected_clinic";
 
-const CLINICS = {
+export const CLINICS = {
   lustdorf: {
     key: "lustdorf",
     label: "Люстдорфська Дорога",
@@ -12,11 +12,6 @@ const CLINICS = {
     viber: "+380506820169",
     mapAddress: "Люстдорфська дорога 55М, Одеса",
     heroCity: "Одесі",
-    gallery: [
-      "/img/clinics/lustdorf/cab1.jpg",
-      "/img/clinics/lustdorf/cab2.jpg",
-      "/img/clinics/lustdorf/lobby1.jpg",
-    ],
   },
 
   bazar: {
@@ -30,11 +25,6 @@ const CLINICS = {
     viber: "+380506820169",
     mapAddress: "Базарна 26, Одеса",
     heroCity: "Одесі",
-    gallery: [
-      "/img/clinics/bazar/cab1.jpg",
-      "/img/clinics/bazar/lobby1.jpg",
-      "/img/clinics/bazar/lobby2.jpg",
-    ],
   },
 };
 
@@ -55,7 +45,6 @@ export function initClinicDropdown() {
   const modalClinicEl = document.querySelector("[data-modal-clinic]");
   const modalAddressEl = document.querySelector("[data-modal-address]");
 
-  const galleryTitleEl = document.querySelector("[data-gallery-title]");
 
   function closeAll(exceptRoot = null) {
     roots.forEach((r) => {
@@ -69,98 +58,6 @@ export function initClinicDropdown() {
     });
   }
 
-  // -----------------------
-  // Clinic gallery renderer
-  // -----------------------
-  let galleryIndex = 0;
-
-  function renderClinicGallery(images, clinicLabel) {
-    const galleryRoot = document.querySelector("[data-clinic-gallery]");
-    if (!galleryRoot) return;
-
-    const track = galleryRoot.querySelector("[data-gallery-track]");
-    const dots = galleryRoot.querySelector("[data-gallery-dots]");
-    const prev = galleryRoot.querySelector(".gallery__nav--prev");
-    const next = galleryRoot.querySelector(".gallery__nav--next");
-
-    if (!track || !dots) return;
-
-    const imgs = Array.isArray(images) ? images : [];
-    if (!imgs.length) {
-      track.innerHTML = "";
-      dots.innerHTML = "";
-      return;
-    }
-
-    galleryIndex = 0;
-
-    // rebuild slides (important: keep .gallery__slide wrapper for aspect-ratio)
-    track.innerHTML = imgs
-      .map(
-        (src, i) => `
-          <div class="gallery__slide">
-            <img
-              src="${src}"
-              alt="Галерея — ${clinicLabel} — ${i + 1}"
-              loading="lazy"
-            />
-          </div>
-        `,
-      )
-      .join("");
-
-    // rebuild dots
-    dots.innerHTML = "";
-    imgs.forEach((_, i) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "gallery__dot";
-      b.setAttribute("aria-label", `Фото ${i + 1}`);
-      b.addEventListener("click", () => goTo(i));
-      dots.appendChild(b);
-    });
-
-    function updateDots() {
-      const ds = Array.from(dots.querySelectorAll("button"));
-      ds.forEach((d, i) =>
-        d.setAttribute("aria-current", i === galleryIndex ? "true" : "false"),
-      );
-    }
-
-    function goTo(i) {
-      galleryIndex = (i + imgs.length) % imgs.length;
-      track.style.transform = `translateX(-${galleryIndex * 100}%)`;
-      updateDots();
-    }
-
-    // replace nav buttons to wipe old handlers
-    if (prev) {
-      const prevClone = prev.cloneNode(true);
-      prev.parentNode.replaceChild(prevClone, prev);
-    }
-    if (next) {
-      const nextClone = next.cloneNode(true);
-      next.parentNode.replaceChild(nextClone, next);
-    }
-
-    const prevBtn = galleryRoot.querySelector(".gallery__nav--prev");
-    const nextBtn = galleryRoot.querySelector(".gallery__nav--next");
-
-    prevBtn?.addEventListener("click", () => goTo(galleryIndex - 1));
-    nextBtn?.addEventListener("click", () => goTo(galleryIndex + 1));
-
-    // avoid visual artifacts after re-render
-    track.style.transition = "none";
-    track.style.transform = "translateX(0%)";
-    void track.offsetHeight;
-    track.style.transition = "";
-
-    goTo(0);
-  }
-
-  // -----------------------
-  // Apply clinic
-  // -----------------------
   function applyClinic(clinicKey) {
     const clinic = CLINICS[clinicKey];
     if (!clinic) return;
@@ -168,10 +65,6 @@ export function initClinicDropdown() {
     if (addressEl) addressEl.textContent = clinic.address;
     if (hoursEl) hoursEl.textContent = clinic.hours;
     if (heroCityEl) heroCityEl.textContent = clinic.heroCity;
-
-    if (galleryTitleEl) {
-      galleryTitleEl.textContent = `Галерея — ${clinic.shortAddress}`;
-    }
 
     if (modalClinicEl) modalClinicEl.textContent = "Одеса";
     if (modalAddressEl) modalAddressEl.textContent = clinic.address;
@@ -208,14 +101,25 @@ export function initClinicDropdown() {
       if (typeof root._sliderRefresh === "function") root._sliderRefresh();
     });
 
-    // clinic gallery
-    renderClinicGallery(clinic.gallery, clinic.label);
+    // notify gallery (clinic-gallery.js listens for this)
+    window.dispatchEvent(
+      new CustomEvent("clinic:change", { detail: { id: clinicKey } }),
+    );
 
-    localStorage.setItem(STORAGE_KEY, clinicKey);
+    try {
+      localStorage.setItem(STORAGE_KEY, clinicKey);
+    } catch {
+      /* private browsing */
+    }
   }
 
   // init
-  const saved = localStorage.getItem(STORAGE_KEY);
+  let saved;
+  try {
+    saved = localStorage.getItem(STORAGE_KEY);
+  } catch {
+    saved = null;
+  }
   const initialKey = saved && CLINICS[saved] ? saved : "lustdorf";
   applyClinic(initialKey);
 

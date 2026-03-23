@@ -23,8 +23,18 @@ export function initDoctorsModal() {
     const data = card.dataset;
 
     if (img) {
-      img.src = data.img || "";
+      const pngSrc = data.img || "";
+      const webpSrc = pngSrc.replace(/\.(png|jpg|jpeg)$/i, ".webp");
+      img.src = pngSrc;
       img.alt = data.name ? `${data.name}` : "";
+      img.decoding = "async";
+      img.width = 1024;
+      img.height = 1536;
+
+      const source = img.parentElement?.querySelector("source[type='image/webp']");
+      if (source) {
+        source.srcset = webpSrc;
+      }
     }
     if (nameEl) nameEl.textContent = data.name || "—";
     if (roleEl) roleEl.textContent = data.role || "—";

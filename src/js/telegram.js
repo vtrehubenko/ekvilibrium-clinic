@@ -1,6 +1,6 @@
-const STORAGE_KEY = "ek_selected_clinic";
+import { CLINICS } from "./clinic.js";
 
-import { CLINICS } from "./clinicDropdown.js";
+const STORAGE_KEY = "ek_selected_clinic";
 
 export function initTelegramForm() {
   const form = document.querySelector("[data-contact-form]");
@@ -19,7 +19,13 @@ export function initTelegramForm() {
       const phone = (fd.get("phone") || "").toString().trim();
       const msg = (fd.get("msg") || "").toString().trim();
 
-      const clinicKey = localStorage.getItem(STORAGE_KEY) || "lustdorf";
+      let clinicKey;
+      try {
+        clinicKey = localStorage.getItem(STORAGE_KEY);
+      } catch {
+        clinicKey = null;
+      }
+      clinicKey = clinicKey || "lustdorf";
       const clinic = CLINICS[clinicKey] || CLINICS.lustdorf;
 
       const text =

@@ -3,6 +3,11 @@ const GALLERIES = {
     title: "Галерея — Люстдорфська дорога, 55М",
     items: [
       {
+        src: "/img/clinics/lustdorf/reg.jpg",
+        alt: "Кабінет 1 — Люстдорфська",
+        caption: "Кабінет — сучасне обладнання",
+      },
+      {
         src: "/img/clinics/lustdorf/cab1.jpg",
         alt: "Кабінет 1 — Люстдорфська",
         caption: "Кабінет — сучасне обладнання",
@@ -17,12 +22,27 @@ const GALLERIES = {
         alt: "Ресепшн — Люстдорфська",
         caption: "Зона очікування / ресепшн",
       },
+      {
+        src: "/img/clinics/lustdorf/corr.jpg",
+        alt: "Ресепшн — Люстдорфська",
+        caption: "Зона очікування / ресепшн",
+      },
     ],
   },
 
   bazar: {
     title: "Галерея — Базарна, 26",
     items: [
+      {
+        src: "/img/clinics/bazar/cab1.jpg",
+        alt: "Кабінет — Базарна",
+        caption: "Кабінет — комфорт та стерильність",
+      },
+      {
+        src: "/img/clinics/bazar/cab1.jpg",
+        alt: "Кабінет — Базарна",
+        caption: "Кабінет — комфорт та стерильність",
+      },
       {
         src: "/img/clinics/bazar/cab1.jpg",
         alt: "Кабінет — Базарна",

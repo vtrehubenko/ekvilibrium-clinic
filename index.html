@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EKvilibrium Clinic — сучасна стоматологія в Одесі. Терапія, ортодонтія, ортопедія, хірургія. Запис онлайн." />
+    <meta name="theme-color" content="#f6f8fb" />
     <title>EKvilibrium Clinic — стоматологія в Одесі</title>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <meta name="apple-mobile-web-app-title" content="Ekvilibrium" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
   <body>
     <header class="header" id="top">
       <div class="container header__inner">
@@ -311,11 +311,17 @@
               data-img="/img/doctors/ekaterina.png"
             >
               <div class="doctor__media">
-                <img
-                  src="/img/doctors/ekaterina.png"
-                  alt="Єкатерина — Стоматолог"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="/img/doctors/ekaterina.webp" type="image/webp" />
+                  <img
+                    src="/img/doctors/ekaterina.png"
+                    alt="Єкатерина — Стоматолог"
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="doctor__body">
                 <h3 class="doctor__name">Єкатерина А.</h3>
@@ -336,11 +342,17 @@
               data-img="/img/doctors/olga_i.png"
             >
               <div class="doctor__media">
-                <img
-                  src="/img/doctors/olga_i.png"
-                  alt="Ольга — команда клініки"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="/img/doctors/olga_i.webp" type="image/webp" />
+                  <img
+                    src="/img/doctors/olga_i.png"
+                    alt="Ольга — команда клініки"
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="doctor__body">
                 <h3 class="doctor__name">Ольга І.</h3>
@@ -361,11 +373,17 @@
               data-img="/img/doctors/asmolova.png"
             >
               <div class="doctor__media">
-                <img
-                  src="/img/doctors/asmolova.png"
-                  alt="Асмолова — Ортодонтія"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="/img/doctors/asmolova.webp" type="image/webp" />
+                  <img
+                    src="/img/doctors/asmolova.png"
+                    alt="Асмолова — Ортодонтія"
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="doctor__body">
                 <h3 class="doctor__name">Єкатерина О.</h3>
@@ -386,11 +404,17 @@
               data-img="/img/doctors/olga_o.png"
             >
               <div class="doctor__media">
-                <img
-                  src="/img/doctors/olga_o.png"
-                  alt="Ольга — Лікар-стоматолог"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="/img/doctors/olga_o.webp" type="image/webp" />
+                  <img
+                    src="/img/doctors/olga_o.png"
+                    alt="Ольга — Лікар-стоматолог"
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="doctor__body">
                 <h3 class="doctor__name">Ольга О.</h3>
@@ -409,20 +433,23 @@
           class="modal__card"
           role="dialog"
           aria-modal="true"
-          aria-label="Doctor details"
+          aria-label="Деталі про лікаря"
         >
           <button
             class="modal__close"
             type="button"
             data-close-doctor
-            aria-label="Close"
+            aria-label="Закрити"
           >
             ✕
           </button>
 
           <div class="modal__grid">
             <div class="modal__media">
-              <img data-modal-img alt="" />
+              <picture>
+                <source type="image/webp" srcset="" />
+                <img data-modal-img alt="" />
+              </picture>
             </div>
 
             <div class="modal__content">
@@ -464,7 +491,7 @@
             <button
               class="gallery__nav gallery__nav--prev"
               type="button"
-              aria-label="Предыдущее фото"
+              aria-label="Попереднє фото"
             >
               ‹
             </button>
@@ -476,7 +503,7 @@
             <button
               class="gallery__nav gallery__nav--next"
               type="button"
-              aria-label="Следующее фото"
+              aria-label="Наступне фото"
             >
               ›
             </button>
@@ -626,7 +653,7 @@
             class="icon-btn"
             type="button"
             data-close-modal
-            aria-label="Close"
+            aria-label="Закрити"
           >
             ✕
           </button>
@@ -700,7 +727,7 @@
           <a
             class="modal__action modal__action--phone"
             data-phone
-            href="tel:+380XXXXXXXXX"
+            href="tel:+380506820169"
           >
             <div class="modal__actionTitle">Подзвонити</div>
             <div class="muted">Найшвидший спосіб</div>
@@ -709,7 +736,7 @@
           <a
             class="modal__action modal__action--tg"
             data-tg
-            href="https://t.me/USERNAME"
+            href="https://t.me/tombri"
             target="_blank"
             rel="noreferrer"
           >
@@ -720,7 +747,7 @@
           <a
             class="modal__action modal__action--viber"
             data-viber
-            href="viber://chat?number=%2B380XXXXXXXXX"
+            href="viber://chat?number=%2B380506820169"
           >
             <div class="modal__actionTitle">Viber</div>
             <div class="muted">Написати у Viber</div>
