@@ -89,6 +89,7 @@
 
 .gallery__viewport {
   overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
 .gallery__track {
